@@ -14,9 +14,9 @@ Environmental requirements to be fulfilled before proceeding to the _Execution_.
 
 ### 2.2 Execution
 1. Clone the GIT repository containing the project files
-2. Import the following project folders into your eclipse environment: <br>
--- SEMKIS/lu.uni.lassy.phd.dsl.semkis.parent <br>
--- SEMKIS/lu.uni.lassy.phd.dsl.semkis.common
+2. Import the following projects inside these folders into your eclipse environment: <br>
+-- All projects inside: SEMKIS/lu.uni.lassy.phd.dsl.semkis.parent <br>
+-- Project: SEMKIS/lu.uni.lassy.phd.dsl.semkis.common
 3. In eclipse, open the lu.uni.lassy.phd.dsl.semkis.parent/lu.uni.lassy.phd.dsl.semkis/src/lu.uni.lassy.phd.dsl.semkis package contained in lu.uni.lassy.phd.dsl.semkis.parent 
 4. Inside the package, find the Semkis.xtext file
 5. Right-click on Semkis.xtext file, then select _Run as_ and _Generate Xtext Artifacts_
