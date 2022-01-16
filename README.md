@@ -1,5 +1,5 @@
 ---
-# SEMKIS User manual
+# SEMKIS-DSL User manual
 ## 1. Project repository informations
 
 As part of my PhD thesis, I have introduced SEMKIS is a software engineering methodology for the knowledge management of intelligent systems.
