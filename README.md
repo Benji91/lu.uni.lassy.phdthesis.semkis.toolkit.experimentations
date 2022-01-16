@@ -1,7 +1,15 @@
 ---
 # SEMKIS User manual
 ## 1. Project repository informations
-Describe the project repository and the structure of the folders e.g. The folder XxX contains the project files specifying XxX....
+
+As part of my PhD thesis, I have introduced SEMKIS is a software engineering methodology for the knowledge management of intelligent systems.
+SEMKIS is supported by a domain-specific language, called SEMKIS-DSL, for specifying the neural network's recognition skills.
+This GIT repository contains the experimentations presented in my PhD thesis related to SEMKIS.
+It contains several specifications of the neural network's requirements and key-properties.
+
+The folder eclipse-workspace-semkis-dsl contains all projects related to the SEMKIS-DSL grammar.
+The folder runtime-EclipseXtext contains some specification instances for MNIST and counter meter case study.
+
 ## 2. Run experiment
 ### 2.1 Prerequisites
 Environmental requirements to be fulfilled before proceeding to the _Execution_.
