@@ -1,0 +1,87 @@
+KeyProperties{
+	QuantitativeKeyProperties {
+		ContinuousKeyProperty ckp1 {
+			name "training dataset size"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_train {
+				accuracyValue 99.97
+			}
+			
+		}
+				
+		ContinuousKeyProperty ckp2 {
+			name "development dataset size"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_dev {
+				accuracyValue 99.25
+			}
+			
+		}
+		
+		ContinuousKeyProperty ckp3 {
+			name "testing dataset size"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_test {
+				accuracyValue 99.50
+			}
+			
+		}
+		
+		DiscreteKeyProperty dkp1 {
+			name "test dataset size"
+			description "The test dataset size is 320"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			QuantitativeDatasetAnalysis dstest_data for dataset dstest{
+				size 320
+			}
+		}
+		
+		DiscreteKeyProperty dkp2 {
+			name "Correct classifications"
+			description "320 (all) images have been correctly classified."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			correctly classified QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 320
+			}
+		}
+		
+		
+		DiscreteKeyProperty dkp3 {
+			name "Incorrect recognition of digit 8"
+			description "NN recognises the left digit on 8 images incorrectly."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 8
+			}
+		}
+		
+		DiscreteKeyProperty dkp4 {
+			name "Incorrect recognition of digit 9"
+			description "NN recognises the right digit on 3 images incorrectly.."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 2
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+KeyProperty-Improvement KP1_IMP {
+	name 'Recognition Threshold'
+	description "The acceptance threshold that an image belongs to an 
+		equivalence class should be fixed to 0.9."
+	priority high
+	author "BJ"
+	version 1.0
+	status toBeDiscussed
+}
+
+KeyProperty-Improvement KP2_IMP {
+	name 'Testing Dataset Details'
+	description "The testing dataset size should be at least 1000. 
+		There should be at least 5 images per equivalence class."
+	priority high
+	author "BJ"
+	version 1.0
+	status toBeDiscussed
+}
+
+KeyProperty-Improvement KP3_IMP {
+	name 'Tolerance Policy'
+	description "The right digit of an image can be recognised with a 
+		tolerance of +/- 2."
+	priority high
+	author "NG"
+	version 1.0
+	status toBeDiscussed
+}

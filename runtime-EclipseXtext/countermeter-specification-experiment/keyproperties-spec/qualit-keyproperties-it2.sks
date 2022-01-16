@@ -1,0 +1,70 @@
+KeyProperties{
+	QualitativeKeyProperties {
+		/*NominalKeyProperty nkp1 {
+				UntestedClasses uts1 {
+					description "These classes have not been tested"
+					equivalenceClasses LeftDigit.LeftThree, RightDigit.RightZero
+				}
+		}*/
+		NominalKeyProperty nkp2a {
+			RecognitionAnomaly recoanomly_seven {
+				description "NN recognises the left and right digit on an image very well."
+				equivalenceClasses LeftDigit, RightDigit
+			}
+		}
+		
+		NominalKeyProperty nkp2b {
+			RecognitionAnomaly recoanomly_seven {
+				description "NN does not always recognise images of shifted digits on sharp and dirty images"
+				equivalenceClasses LeftDigit, RightDigit
+			}
+		}
+		
+		NominalKeyProperty np3 {
+			RecognitionCharacteristic recoChar {
+				recognitionRation 90
+				characteristics 'test'
+				equivalenceClasses LeftDigit, RightDigit
+			}
+		}
+		
+		OrdinalKeyProperty okp1 {
+			EquivalenceclassSelection ecSelection {
+				selectionFunction maximum
+				selectionThreshold greaterOrEqualThan 0.9
+			} 
+		}
+		
+		LogicalKeyProperty lkp1 {
+			EquivalenceClassRecognitionCorrectness ecCorrectRecoLeftDigit {
+				recognitionCorrectness correctly
+				classificationCorrectness correctly
+				equivalenceClasses LeftDigit.LeftZero, LeftDigit.LeftOne, LeftDigit.LeftThree, LeftDigit.LeftFour, LeftDigit.LeftFive, LeftDigit.LeftSeven
+			} 
+		}
+		
+		LogicalKeyProperty lkp2 {
+			EquivalenceClassRecognitionCorrectness ecIncorrectRecoLeftDigit {
+				recognitionCorrectness incorrectly
+				classificationCorrectness correctly
+				equivalenceClasses LeftDigit.LeftTwo, LeftDigit.LeftSix, LeftDigit.LeftEight, LeftDigit.LeftNine
+			} 
+		}	
+		
+		LogicalKeyProperty lkp3 {
+			EquivalenceClassRecognitionCorrectness ecCorrectRecoRightDigit {
+				recognitionCorrectness correctly
+				classificationCorrectness correctly
+				equivalenceClasses RightDigit.RightOne, RightDigit.RightZero, RightDigit.RightThree, RightDigit.RightFour, RightDigit.RightFive,RightDigit.RightSeven, RightDigit.RightEight,RightDigit.RightSix
+			} 
+		}	
+		
+		LogicalKeyProperty lkp4 {
+			EquivalenceClassRecognitionCorrectness ecIncorrectRecoRightDigit {
+				recognitionCorrectness incorrectly
+				classificationCorrectness correctly
+				equivalenceClasses RightDigit.RightTwo, RightDigit.RightNine
+			} 
+		}		
+	}
+}

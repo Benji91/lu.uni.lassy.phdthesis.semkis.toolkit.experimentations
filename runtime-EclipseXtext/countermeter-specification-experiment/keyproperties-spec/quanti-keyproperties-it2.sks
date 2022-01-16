@@ -1,0 +1,147 @@
+KeyProperties{
+	QuantitativeKeyProperties {
+		ContinuousKeyProperty ckp1 {
+			name "training dataset accuracy"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_train {
+				accuracyValue 100
+			}
+			
+		}
+				
+		ContinuousKeyProperty ckp2 {
+			name "development dataset accuracy"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_dev {
+				accuracyValue 100
+			}
+			
+		}
+		
+		ContinuousKeyProperty ckp3 {
+			name "testing dataset accuracy"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_test {
+				accuracyValue 99.59
+			}
+			
+		}
+		
+		ContinuousKeyProperty ckp4 {
+			name "testing dataset loss"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedLoss loss_test {
+				lossValue 0.014919
+			}
+			
+		}
+		
+		DiscreteKeyProperty dkp1 {
+			name "test dataset size"
+			description "The test dataset size is 600"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			QuantitativeDatasetAnalysis dstest_data for dataset dstest{
+				size 600
+			}
+		}
+		
+		
+		DiscreteKeyProperty dkp2 {
+			name "Correct classifications"
+			description "600 (all) images have been correctly classified."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			correctly classified QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 600
+			}
+		}
+		
+		DiscreteKeyProperty dkp3 {
+			name "Incorrect recognition of digit 5"
+			description "NN recognises the left digit on 5 images incorrectly."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 5
+			}
+		}
+		
+		DiscreteKeyProperty dkp4 {
+			name "Incorrect recognition of digit 9"
+			description "NN recognises the right digit on 2 images incorrectly."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 2
+			}
+		}
+		
+		DiscreteKeyProperty dkp5 {
+			name "Incorrect recognition of dark or bright images"
+			description "NN does not recognise 7 noisy images with dark or bright backgrounds"
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 7
+			}
+		}
+		
+		DiscreteKeyProperty dkp6 {
+			name "Incorrect recognition of dark digits on a dark background"
+			description "NN does not recognise 3 noisy images with dark background and dark digits"
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 3
+			}
+		}
+		
+		DiscreteKeyProperty dkp7 {
+			name "Incorrect recognition of bright digits on a bright background"
+			description "NN does not recognise 2 noisy images with bright background and bright digits"
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 2
+			}
+		}
+		
+		DiscreteKeyProperty dkp8 {
+			name "Incorrect recognition of dark digits on a bright background"
+			description "NN does not recognise 2 noisy images with bright background and dark digits"
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis c_class for dataset dstest {
+				amount 2
+			}
+		}
+	}
+}

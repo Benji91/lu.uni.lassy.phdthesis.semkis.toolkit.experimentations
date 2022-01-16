@@ -1,0 +1,539 @@
+EquivalenceClasses {
+	EquivalenceClass LeftDigit {
+		name "equivalence classes of the left digit"
+		EquivalenceClass LeftZero {
+			name 'Left-Digit-One-Images'
+			value '0'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitZero
+			
+		}
+		EquivalenceClass LeftOne {
+			name 'Left-Digit-One-Images'
+			value '1'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitOne
+		}
+		EquivalenceClass LeftTwo {
+			name 'Left-Digit-Two-Images'
+			value '2'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitTwo
+		}
+		
+		EquivalenceClass LeftThree {
+			name 'Left-Digit-Three-Images'
+			value '3'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitThree
+		}
+		
+		EquivalenceClass LeftFour {
+			name 'Left-Digit-Four-Images'
+			value '4'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitFour
+		}
+		
+		EquivalenceClass LeftFive {
+			name 'Left-Digit-Five-Images'
+			value '5'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitFive
+		}
+		
+		EquivalenceClass LeftSix {
+			name 'Left-Digit-Six-Images'
+			value '6'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitSix
+		}
+		
+		EquivalenceClass LeftSeven {
+			name 'Left-Digit-Seven-Images'
+			value '7'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitSeven
+		}
+		
+		EquivalenceClass LeftEight {
+			name 'Left-Digit-Eight-Images'
+			value '8'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitEight
+		}
+		
+		EquivalenceClass LeftNine {
+			name 'Left-Digit-Nine-Images'
+			value '9'
+			acceptanceRule greaterThan 0.95		
+			dataElements imgDigitNine
+		}	
+	}
+	
+	EquivalenceClass RightDigit{
+		name "equivalence classes of the right digit"
+		EquivalenceClass RightZero {
+			name 'Right-Digit-One-Images'
+			value '0'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitZero
+			
+		}
+		EquivalenceClass RightOne {
+			name 'Right-Digit-One-Images'
+			value '1'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitOne
+		}
+		EquivalenceClass RightTwo {
+			name 'Right-Digit-Two-Images'
+			value '2'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitTwo
+		}
+		
+		EquivalenceClass RightThree {
+			name 'Right-Digit-Three-Images'
+			value '3'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitThree
+		}
+		
+		EquivalenceClass RightFour {
+			name 'Right-Digit-Four-Images'
+			value '4'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitFour
+		}
+		
+		EquivalenceClass RightFive {
+			name 'Right-Digit-Five-Images'
+			value '5'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitFive
+		}
+		
+		EquivalenceClass RightSix {
+			name 'Right-Digit-Six-Images'
+			value '6'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitSix
+		}
+		
+		EquivalenceClass RightSeven {
+			name 'Right-Digit-Seven-Images'
+			value '7'
+			acceptanceRule greaterThan 0.95
+			dataElements imgDigitSeven
+		}
+		
+		EquivalenceClass RightEight {
+			name 'Right-Digit-Eight-Images'
+			value '8'
+			acceptanceRule greaterThan 0.95	
+			dataElements imgDigitEight
+		}
+		
+		EquivalenceClass RightNine {
+			name 'Right-Digit-Nine-Images'
+			value '9'
+			acceptanceRule greaterThan 0.95		
+			dataElements imgDigitNine
+		}
+	}
+}
+
+
+
+DataElements {
+	DataElement imgDigitOne {
+		name 'Digit One'
+		description 'Image of a 7-segment black "1" on white background'
+		imageElements {
+			ImageElement img1{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img1digit {
+						name 'Digit One'
+						description 'black, 7-segment and digital digit "1"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img1background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitTwo {
+		name 'Digit Two'
+		description 'Image of a 7-segment black "2" on white background'
+		imageElements {
+			ImageElement img2{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img2digit {
+						name 'Digit Two'
+						description 'black, 7-segment and digital digit "2"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img2background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitThree {
+		name 'Digit Three'
+		description 'Image of a 7-segment black "3" on white background'
+		imageElements {
+			ImageElement img3{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img3digit {
+						name 'Digit Three'
+						description 'black, 7-segment and digital digit "3"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img2background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitFour {
+		name 'Digit Four'
+		description 'Image of a 7-segment black "4" on white background'
+		imageElements {
+			ImageElement img4{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img4digit {
+						name 'Digit Four'
+						description 'black, 7-segment and digital digit "4"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img4background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitFive {
+		name 'Digit Five'
+		description 'Image of a 7-segment black "5" on white background'
+		imageElements {
+			ImageElement img5{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img5digit {
+						name 'Digit Five'
+						description 'black, 7-segment and digital digit "5"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img5background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitSix {
+		name 'Digit Six'
+		description 'Image of a 7-segment black "6" on white background'
+		imageElements {
+			ImageElement img6{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img6digit {
+						name 'Digit Six'
+						description 'black, 7-segment and digital digit "6"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img6background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitSeven {
+		description 'Image of a 7-segment black "7" on white background'
+		imageElements {
+			ImageElement img7{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img7digit {
+						name 'Seven'
+						description 'black, 7-segment and digital digit "7"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img7background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitEight {
+		name 'Digit Eight'
+		description 'Image of a 7-segment black "8" on white background'
+		imageElements {
+			ImageElement img8{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img8digit {
+						name 'Digit Eight'
+						description 'black, 7-segment and digital digit "8"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img8background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitNine {
+		name 'Digit Nine'
+		description 'Image of a 7-segment black "9" on white background'
+		imageElements {
+			ImageElement img9{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img9digit {
+						name 'Digit Nine'
+						description 'black, 7-segment and digital digit "9"'
+						position center
+						pixelValueIntervals [0;10]
+      					features shift([up , 10])
+                        customFeatures 'black shape'
+					}
+					ImageContent img9background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitZero {
+		name 'Digit Zero'
+		description 'Image of a 7-segment black "0" on white background'
+		imageElements {
+			ImageElement img0{
+				format [310 x 165]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img0digit {
+						name 'Digit Zero'
+						description 'black, 7-segment and digital digit "0"'
+						position center
+						pixelValueIntervals [0;10]
+						features shift([up , 10])
+                        customFeatures 'black shape'
+                	}
+					ImageContent img0background {
+						name 'Background'
+						description 'white background'
+						position background
+						pixelValueIntervals [240;255]
+						customFeatures 'white background'
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+Datasets {
+	Dataset dstrain for processIteration 0 {
+		name 'training dataset'
+		description 'The target neural network shall be trained on the training dataset.'
+		datasetType training
+		version 0.1
+		size 645
+		format [310 x 330 x 645]
+			
+		equivalenceClasses{
+			LeftDigit.LeftZero		(numElements 60),
+			LeftDigit.LeftOne		(numElements 82),
+			LeftDigit.LeftTwo		(numElements 54),
+			LeftDigit.LeftThree		(numElements 55), 
+			LeftDigit.LeftFour		(numElements 81), 
+			LeftDigit.LeftFive		(numElements 49), 
+			LeftDigit.LeftSix		(numElements 65), 
+			LeftDigit.LeftSeven		(numElements 65), 
+			LeftDigit.LeftEight		(numElements 70), 
+			LeftDigit.LeftNine		(numElements 74),
+			RightDigit.RightZero	(numElements 67),
+			RightDigit.RightOne		(numElements 46),
+			RightDigit.RightTwo		(numElements 59),
+			RightDigit.RightThree	(numElements 63), 
+			RightDigit.RightFour	(numElements 69), 
+			RightDigit.RightFive	(numElements 56), 
+			RightDigit.RightSix		(numElements 63), 
+			RightDigit.RightSeven	(numElements 71), 
+			RightDigit.RightEight	(numElements 70), 
+			RightDigit.RightNine	(numElements 81)
+		}
+	}
+	
+	Dataset dstest for processIteration 0 {
+		name 'testing dataset'
+		description 'The trained target neural network shall be tested on the testing dataset.'
+		datasetType testing
+		version 0.1
+		size 172
+		format [ 310 x 330 x 172]
+		equivalenceClasses{
+			LeftDigit.LeftZero		(numElements 18),
+			LeftDigit.LeftOne		(numElements 10),
+			LeftDigit.LeftTwo		(numElements 14),
+			LeftDigit.LeftThree		(numElements 18), 
+			LeftDigit.LeftFour		(numElements 22), 
+			LeftDigit.LeftFive		(numElements 15), 
+			LeftDigit.LeftSix		(numElements 19), 
+			LeftDigit.LeftSeven		(numElements 16), 
+			LeftDigit.LeftEight		(numElements 17), 
+			LeftDigit.LeftNine		(numElements 23),
+			RightDigit.RightZero	(numElements 20),
+			RightDigit.RightOne		(numElements 11),
+			RightDigit.RightTwo		(numElements 21),
+			RightDigit.RightThree	(numElements 17), 
+			RightDigit.RightFour	(numElements 8), 
+			RightDigit.RightFive	(numElements 20), 
+			RightDigit.RightSix		(numElements 23), 
+			RightDigit.RightSeven	(numElements 12), 
+			RightDigit.RightEight	(numElements 16), 
+			RightDigit.RightNine	(numElements 24)
+		}
+		
+	}
+	
+	Dataset dsdev for processIteration 0 {
+		name 'development dataset'
+		description 'The target neural network shall be tested during the training to detect recognition issues.'
+		datasetType development
+		version 0.1
+		size 40
+		format [ 310 x 330 x 40]
+		equivalenceClasses{
+			LeftDigit.LeftZero		(numElements 3),
+			LeftDigit.LeftOne		(numElements 4),
+			LeftDigit.LeftTwo		(numElements 3),
+			LeftDigit.LeftThree		(numElements 4), 
+			LeftDigit.LeftFour		(numElements 2), 
+			LeftDigit.LeftFive		(numElements 4), 
+			LeftDigit.LeftSix		(numElements 5), 
+			LeftDigit.LeftSeven		(numElements 2), 
+			LeftDigit.LeftEight		(numElements 4), 
+			LeftDigit.LeftNine		(numElements 9),
+			RightDigit.RightZero	(numElements 8),
+			RightDigit.RightOne		(numElements 5),
+			RightDigit.RightTwo		(numElements 1),
+			RightDigit.RightThree	(numElements 5), 
+			RightDigit.RightFour	(numElements 4), 
+			RightDigit.RightFive	(numElements 3), 
+			RightDigit.RightSix		(numElements 3), 
+			RightDigit.RightSeven	(numElements 6), 
+			RightDigit.RightEight	(numElements 4), 
+			RightDigit.RightNine	(numElements 1)
+		}
+	}
+}
+
+

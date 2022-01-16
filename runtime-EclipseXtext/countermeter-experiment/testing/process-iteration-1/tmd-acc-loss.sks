@@ -1,0 +1,49 @@
+Test-Monitoring-Data acc_train {
+	name 'Training dataset accuracy value'
+	description '99.97%'
+	artefacts acc_loss_artefact
+	observations  obs1, obs12
+}
+
+Test-Monitoring-Data acc_dev {
+	name 'Development dataset accuracy value'
+	description '99.37%'
+	artefacts acc_loss_artefact
+	observations  obs1, obs12
+}
+
+Test-Monitoring-Data acc_test {
+	name 'Testing dataset accuracy value'
+	description '99.56%'
+	artefacts acc_loss_artefact
+	observations  obs1, obs12
+}
+
+Test-Monitoring-Data loss_train {
+	name 'Training dataset accuracy value'
+	description '0.003383'
+	artefacts acc_loss_artefact
+	observations obs7, obs12
+}
+
+Test-Monitoring-Data loss_dev {
+	name 'Development dataset accuracy value'
+	description '0.030070'
+	artefacts acc_loss_artefact
+	observations obs7, obs12
+}
+
+Test-Monitoring-Data loss_test {
+	name 'Testing dataset accuracy value'
+	description '0.026240'
+	artefacts acc_loss_artefact
+	observations  obs7, obs12
+}
+
+	Artefact acc_loss_artefact {
+		name "Accuracy and Loss Values"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/performance/cnn/"
+		filename "r1_perfomance.txt"	
+	}
+	

@@ -1,0 +1,64 @@
+KeyProperties{
+	QualitativeKeyProperties {
+		NominalKeyProperty nkp1 {
+				UntestedClasses uts1 {
+					description "These classes have not been tested"
+					equivalenceClasses LeftDigit.LeftThree, RightDigit.RightZero
+				}
+		}
+		
+		NominalKeyProperty nkp2 {
+			RecognitionAnomaly recoanomly_seven {
+				description "targetNN has issues in recognising shifted digits on sharp and dirty images."
+				equivalenceClasses LeftDigit, RightDigit
+			}
+		}
+		
+		NominalKeyProperty np3 {
+			RecognitionCharacteristic recoChar {
+				recognitionRation 60
+				characteristics 'test'
+				equivalenceClasses LeftDigit, RightDigit
+			}
+		}
+		
+		OrdinalKeyProperty okp1 {
+			EquivalenceclassSelection ecSelection {
+				selectionFunction maximum
+				selectionThreshold greaterOrEqualThan 0.5
+			} 
+		}
+		
+		LogicalKeyProperty lkp1 {
+			EquivalenceClassRecognitionCorrectness ecCorrectRecoLeftDigit {
+				recognitionCorrectness correctly
+				classificationCorrectness correctly
+				equivalenceClasses LeftDigit.LeftOne, LeftDigit.LeftThree, LeftDigit.LeftSix, LeftDigit.LeftSeven
+			} 
+		}
+		
+		LogicalKeyProperty lkp2 {
+			EquivalenceClassRecognitionCorrectness ecIncorrectRecoLeftDigit {
+				recognitionCorrectness incorrectly
+				classificationCorrectness correctly
+				equivalenceClasses LeftDigit.LeftZero, LeftDigit.LeftTwo, LeftDigit.LeftFour, LeftDigit.LeftFive,LeftDigit.LeftEight,LeftDigit.LeftNine
+			} 
+		}	
+		
+		LogicalKeyProperty lkp3 {
+			EquivalenceClassRecognitionCorrectness ecCorrectRecoRightDigit {
+				recognitionCorrectness correctly
+				classificationCorrectness correctly
+				equivalenceClasses RightDigit.RightOne, RightDigit.RightTwo, RightDigit.RightThree, RightDigit.RightFour, RightDigit.RightFive,RightDigit.RightSeven, RightDigit.RightEight,RightDigit.RightNine
+			} 
+		}	
+		
+		LogicalKeyProperty lkp4 {
+			EquivalenceClassRecognitionCorrectness ecIncorrectRecoRightDigit {
+				recognitionCorrectness incorrectly
+				classificationCorrectness correctly
+				equivalenceClasses RightDigit.RightOne, RightDigit.RightSix
+			} 
+		}		
+	}
+}

@@ -1,0 +1,451 @@
+grammar lu.uni.lassy.phd.dsl.semkis.Semkis with org.eclipse.xtext.common.Terminals
+
+generate semkis "http://www.uni.lu/lassy/phd/dsl/semkis/Semkis"
+
+Model:
+	elements+=(ctRequirements
+		| ctDatasets
+		| ctEquivalenceClasses
+		| ctDataElements
+		| ctKeyProperties		
+	)*;
+
+
+ctDatasets :
+	{ctDatasets} 'Datasets' '{'
+		datasets += ctDataset*
+	'}'
+;
+
+ctDataset:
+	'Dataset' name=ID ('for' 'processIteration' processiteration=INT)? '{'
+		('name' fullname=STRING)
+		('description' description=STRING)?
+		('datasetType' type=enDATASETTYPE)?
+		('version' version=REAL)?
+		('size' size=INT)?
+		('format' '['format+=INT('x'format+=INT)*']')?
+		('equivalenceClasses' '{'
+			equivalenceclasses+=[ctEquivalenceClass|FQN]('(''numElements' classsize+=INT')')?(','equivalenceclasses+=[ctEquivalenceClass|FQN] ('(''numElements' classsize+=INT')')?)*
+			'}'
+		)? 
+	'}'
+;
+
+ctEquivalenceClasses :
+	{ctEquivalenceClasses} 'EquivalenceClasses' '{'
+		equivalenceClasses += ctEquivalenceClass*
+	'}'
+;
+
+ctEquivalenceClass:
+	'EquivalenceClass'name=ID '{'
+		('name' fullname=STRING)
+		('description' description=STRING)?
+		('value' value=STRING)?
+		('acceptanceRule'  symbol=enCOMPARATORS threshold=REAL)?
+		('dataElements' dataelements+=[ctDataElement|FQN](','dataelements+=[ctDataElement|FQN])*)?
+		rnSubEquivalenceClasses+=ctEquivalenceClass*
+	'}'
+;
+
+//DataElements specification
+ctDataElements :
+	{ctDataElements} 'DataElements' '{'
+		dataElement += ctDataElement*
+	'}'
+;
+
+//DataElement specification
+//A data element can be a single neuron (f.ex age, year, percentage, nationality) or a set of neurons (e.g. image, voice)
+ctDataElement:
+	'DataElement' name=ID '{'
+		('name' fullname=STRING)?
+		('description' description=STRING)?
+		(('numericalElements' '{'
+			numericalelements+=ctNumericalElement*
+		'}'
+		)|
+		('imageElements' '{'
+			imageobjects+=ctImageElement*
+		'}'
+		))?
+	'}'
+;
+
+ctNumericalElement:
+	'NumericalElement' name=ID '{'
+		('name' fullname=STRING)?
+		('description' description=STRING)?
+		('valueRange' interval=dtRealInterval)?
+	'}'
+	
+;
+ctImageElement:
+	'ImageElement' name=ID '{'
+		('name' fullname=STRING)?
+		('description' description=STRING)?
+		('format' '['format+=INT('x'format+=INT)*']')?
+		('pixelFormat' pixelformat=enPIXELFORMAT)?
+		('pixelValueIntervals' intervals+=dtRealInterval(';'intervals+=dtRealInterval)*)?
+		('imageContent' '{'
+			imagecontent+=ctImageContent*
+		'}'
+		)?
+	'}'
+;
+
+ctImageContent:
+	'ImageContent' name=ID '{'
+		('name' fullname=STRING)?
+		('description' description=STRING)?
+		('position' enImgContentPosition=enPOSITION)?
+		('pixelValueIntervals' intervals+=dtRealInterval(';'intervals+=dtRealInterval)*)?
+		('features' features+=enIMAGEMANIPULATION(','features+=enIMAGEMANIPULATION)*)?
+		('customFeatures' customFeatures+=STRING(','customFeatures+=STRING)* )?
+	'}'
+;
+
+
+ctRequirements:
+	{ctRequirements} 'Requirements' '{'
+		functionalRequirements = ctFunctionalRequirements
+		nonfunctionalRequirements = ctNonFunctionalRequirements
+	'}'
+;
+
+ctFunctionalRequirements:
+	{ctFunctionalRequirements} 'functional' 'Requirements' '{'
+		requirements += ctFunctionalRequirement*
+	'}'
+;
+
+ctFunctionalRequirement:
+	 'Requirement' name=ID '{'
+		('description' description=STRING)?
+		('purpose' purpose=STRING)?
+		('priority' priority=PRIORITY)?
+		((targetNNinput=ctTargetNNInput) |
+		(targetNNoutput=ctTargetNNOutput))?
+	'}'
+;
+
+
+ ctNonFunctionalRequirements:
+	{ctNonFunctionalRequirements} 'nonfunctional' 'Requirements' '{'
+		requirements += ctNonFunctionalRequirement*
+	'}'
+;
+ 
+ctNonFunctionalRequirement:
+	 'Requirement' name=ID '{'
+		('description' description=STRING)?
+		('purpose' purpose=STRING)?
+		('priority' priority=PRIORITY)?
+		
+		((accuracy = ctTargetAccuracy)|
+		(loss = ctTargetLoss)|
+		(recall = ctTargetRecall)|
+		(precision = ctTargetPrecision))?
+	'}'
+;
+
+
+/*
+ * Functional Requirements Specification Concepts:
+ */
+ ctTargetNNInput:
+ 	{ctTargetNNInput} 'NeuralNetworksInput' '{'
+ 		('description' description=STRING)?
+ 		('neuronsSize' size=INT)?
+ 		('neuronsFormat' '['format+=INT(','format+=INT)*']'
+ 			('['format+=INT(','format+=INT)*']')*)?
+		('inputData' '{'inputdata+=ctInputdata*'}')?
+ 	'}'
+ ;
+ 
+ ctInputdata:
+ 	'InputData' name=ID '{'
+ 		('description' description=STRING)?
+ 		('neuronValues' interval=dtRealInterval)
+		('dataElements' dataelements+=[ctDataElement|FQN]
+			(','dataelements+=[ctDataElement|FQN])*
+		)?
+ 	'}'
+ ;
+
+ ctTargetNNOutput:
+ 	{ctTargetNNOutput} 'NeuralNetworksOutput' '{'
+ 		('neuronsSize' size=INT)?
+ 		('neuronsFormat' '['format+=INT(','format+=INT)*']'
+ 			('['format+=INT(','format+=INT)*']')*)?
+ 		('outputValueRange' interval=dtRealInterval)?
+ 		('outputNeurons' '['equivalenceclass+=[ctEquivalenceClass|FQN]
+ 				(','equivalenceclass+=[ctEquivalenceClass|FQN])*']')?
+ 		('inputData' inputdata+=[ctInputdata|FQN]
+ 			(','inputdata+=[ctInputdata|FQN])*
+ 		)
+ 	'}'
+ ;
+ 
+ 
+
+ 
+ /*
+ * Nonfunctional Requirements Specification Concepts:
+ */
+ ctTargetAccuracy:
+ 	'TargetAccuracy' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+ 			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+ 		('minAccuracy' min_acc=REAL)?
+ 		('maxAccuracy' max_acc=REAL)?
+ 		('targetAccuracy' target_acc=REAL)?
+ 	'}'
+ ;
+ 
+ ctTargetLoss:
+ 	'TargetLoss' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+ 			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)? 		
+ 		('minLoss' min_loss=REAL)?
+ 		('maxLoss' max_loss=REAL)?
+ 		('targetLoss' target_loss=REAL)?
+ 	'}'
+ ;
+ 
+ ctTargetRecall:
+ 	'TargetRecall' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+ 			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)? 		
+ 		('minRecall' min_recall=REAL)?
+ 		('maxRecall' max_recall=REAL)?
+ 		('targetRecall' target_recall=REAL)?
+ 	'}'
+ ;
+ 
+ ctTargetPrecision:
+ 	'TargetPrecision' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+ 			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)? 		
+ 		('minPrecision' min_precision=REAL)?
+ 		('maxPrecision' max_precision=REAL)?
+ 		('targetPrecision' target_precision=REAL)?
+ 	'}'
+ ;
+ 
+ 
+//********************************************************************************
+// KeyProperties
+ctKeyProperties:
+	{ctKeyProperties} 'KeyProperties' '{'
+		qualKeyproperties += ctQualitativeKeyProperties*
+		quanKeyproperties += ctQuantitativeKeyProperties*
+	'}'
+;
+
+ctQualitativeKeyProperties:
+	{ctQualitativeKeyProperties} 'QualitativeKeyProperties' '{'
+		nominalkeyproperties += ctNominalKeyProperty*
+		ordinalkeyproperties += ctOrdinalKeyProperty*
+		logicalkeyproperties += ctLogicalKeyProperty*
+	'}'
+;
+
+ctNominalKeyProperty:
+	'NominalKeyProperty' name=ID '{'
+		untestedClasses += ctUntestedClasses*
+		recognitioncharacteristics += ctRecognitionCharacteristic*
+		recoAnamalies += ctRecoAnomaly*
+	'}'
+;
+
+ctRecognitionCharacteristic:
+	'RecognitionCharacteristic' name=ID '{'
+		('recognizedAmount' amount=INT)?
+		('recognitionRation' ratio=REAL)?
+		('characteristics' characteristics+=STRING(','characteristics+=STRING)*)?
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+	'}'
+;
+ctUntestedClasses:
+	'UntestedClasses' name=ID '{'
+		('description' description=STRING)?
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN](','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+	'}'
+;
+ctRecoAnomaly:
+	'RecognitionAnomaly' name=ID '{'
+		('description' description=STRING)?
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN](','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+		('dataElements' dataelements+=[ctDataElement|FQN](','dataelements+=[ctDataElement|FQN])*)?
+	'}'
+;
+
+ctOrdinalKeyProperty:
+	'OrdinalKeyProperty' name=ID '{'		
+		recognitionevaluations += ctRecognitionEvaluation*
+		equivalenceclassselection += ctEquivalenceclassSelection*
+	'}'
+;
+
+ctRecognitionEvaluation:
+	'RecognitionEvaluation' name=ID '{'
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+		('recognitionValue' recognitionvalue=enEVALUATION)?
+	'}'	
+;
+ctEquivalenceclassSelection:
+	'EquivalenceclassSelection' name=ID '{'
+		('selectionFunction' selection=enSELECTION)?
+		('selectionThreshold'  symbol=enCOMPARATORS threshold=REAL)?
+	'}'	
+;
+ctLogicalKeyProperty:
+	'LogicalKeyProperty' name=ID '{'
+		ecRecognitioncorrectnesses += ctEquivClassRecoCorrectness*
+		dataRecognitionCorrectnesses += ctDataClassRecoCorrectness*
+	'}'
+;
+
+ctEquivClassRecoCorrectness:
+	'EquivalenceClassRecognitionCorrectness' name=ID '{'
+		('recognitionCorrectness' recognitioncorrectness = enCORRECTNESS)?
+		('classificationCorrectness' classificationcorrectness = enCORRECTNESS)?
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN](','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+	'}'
+;
+ctDataClassRecoCorrectness:
+	'DataElementRecognitionCorrectness' name=ID '{'
+		('recognitionCorrectness' recognitioncorrectness = enCORRECTNESS)?
+		('classificationCorrectness' classificationcorrectness = enCORRECTNESS)?
+		('dataElements' dataelements+=[ctDataElement|FQN](','dataelements+=[ctDataElement|FQN])*)?
+	'}'
+;
+
+
+
+ctQuantitativeKeyProperties:
+	{ctQuantitativeKeyProperties} 'QuantitativeKeyProperties' '{'
+		continuouskeyproperties += ctContinuousKeyProperty*
+		discretekeyproperties += ctDiscreteKeyProperty*
+	'}'
+;
+
+ctContinuousKeyProperty:
+	'ContinuousKeyProperty' name=ID '{'
+		('name' title=STRING)?
+		('description' description=STRING)?
+		('priority' priority=PRIORITY)?
+		('version' version=REAL)?
+		('status' status=STATUS)?
+		((accuracy = ctReachedAccuracy)|
+		(loss = ctReachedLoss)|
+		(recall = ctReachedRecall)|
+		(precision = ctReachedPrecision))?
+	'}'
+;
+
+ ctReachedAccuracy:
+ 	'ReachedAccuracy' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+ 			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+ 		('accuracyValue' accuracy_value=REAL)?
+ 	'}'
+ ;
+ 
+ ctReachedLoss:
+ 	'ReachedLoss' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+ 			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+ 		('lossValue' loss_value=REAL)?
+ 	'}'
+ ;
+ ctReachedRecall:
+ 	'ReachedRecall' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN](','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+ 		('recallValue' recall_value=REAL)?
+ 	'}'
+ ;
+ ctReachedPrecision:
+ 	'ReachedPrecision' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])? '{'
+ 		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN](','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+ 		('precisionValue' precision_value=REAL)?
+ 	'}'
+ ;
+
+ctDiscreteKeyProperty:
+	'DiscreteKeyProperty' name=ID '{'
+		('name' title=STRING)?
+		('description' description=STRING)?
+		('priority' priority=PRIORITY)?
+		('version' version=REAL)?
+		('status' status=STATUS)?
+		((quantitativedataanalysis = ctQuantitativeDataAnalysis) |
+		(quantitativedatasetanalysis=ctQuantitativeDatasetAnalysis))?
+	'}'
+;
+
+ctQuantitativeDatasetAnalysis:
+	'QuantitativeDatasetAnalysis' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])?'{'
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+		'size' size=INT
+	'}'
+;
+ctQuantitativeDataAnalysis:
+	correctness=enCORRECTNESS (recognition=enRECOGNITION |classification = enCLASSIFICATION) 
+		'QuantitativeDataAnalysis' name=ID ('for' 'dataset' dataset=[ctDataset|FQN])?'{'
+		('equivalenceClasses' equivalenceclass+=[ctEquivalenceClass|FQN]
+			(','equivalenceclass+=[ctEquivalenceClass|FQN])*)?
+		'amount' amount=INT
+	'}'
+;
+
+/*
+ctContinuousMeasure: '['lowerbound=INT','upperbound=INT']';
+ctDiscreteMeasure: ('{'numericalenum+=INT(',' numericalenum+=INT)*'}') | ('['lowerbound=INT','upperbound=INT']' 'with' 'step' step=INT);
+ctNominalMeasure: '{'nominalvariable+=STRING':'description+=STRING(','nominalvariable+=STRING':'description+=STRING)*'}';
+ctOrdinalMeasure: '['(ordinalVariable+=STRING':'description+=STRING('-'ordinalVariable+=STRING':'description+=STRING)*)']';
+*/
+/* Auxiliary Concepts */
+dtRealInterval: {dtRealInterval} '['lowerbound=REAL ';' upperbound=REAL']';
+/* Definition of Enumerations */
+enDATASETTYPE: 'training' | 'development' | 'testing' | 'input' | 'synthetic' | 'other';
+enCOMPARATORS: 'greaterThan' | 'lessThan' | 'lessOrEqualThan' | 'greaterOrEqualThan' | 'sameAs' | 'differentFrom';
+enPIXELFORMAT: 'rgb' | 'rgba';
+enPOSITION: 'bottom' | 'top' | 'left' | 'right' | 'center' | 'background';
+enMOVEDIRECTION : 'up' | 'down' | 'left' | 'right';
+enIMAGEMANIPULATION: 
+'shift' '('  '['direction+=enMOVEDIRECTION','pixel+=INT']'(',''['direction+=enMOVEDIRECTION','pixel+=INT']' )*')' | 
+'rotate''('angle=INT ',' 'POS['position+=INT (';' position+=INT)*']' ')' |  
+'zoom' '('faktor=REAL',' 'POS['position+=INT (';' position+=INT)*']' ')'  | 
+'crop' '(' 'POS['position+=INT (';' position+=INT)*']' ',' 'Rect('pixLength=INT','pixHeigth=INT'))' ;
+
+enCORRECTNESS: 'correctly' | 'incorrectly';
+enRECOGNITION: 'recognized';
+enCLASSIFICATION: 'classified' | 'unclassified';
+enEVALUATION:'excellent' | 'verywell' | 'well' | 'satisfactory' | 'bad' | 'verybad' |'unrecognizable';
+enSELECTION:'maximum'| 'minimum';
+STATUS : 'toBeDiscussed' | 'toDo' | 'done' | 'inReview' |  'validated';
+PRIORITY: "high" | "medium" | "low";
+REAL:	(neg ='-')? value = INT (dot='.' r=INT)? (('exp'|'Exp') ('+'|'-')? INT)?;
+FQN: ID ('.' ID)*;
+IMAGEPOSITION: position+=INT (';' position+=INT)*;
+
+CATEGORY: 'quantitative' | 'qualitative' | 'discrete' | 'continuous' | 'nominal' | 'ordinal' | 'logical';
+LOSSFUNCTION: "binaryCrossentropy" | "categoricalCrossentropy" | "sparseCategoricalCrossentropy"| "meanSquaredError" | "meanAbsoluteError";
+ACTIVATION: "relu" | "sigmoid" | "softmax" | "softplus" | "leakyrelu" ;
+BOOLEAN: "true" | "false";
+
+LAYERTYPE: 'convolutional' | 'pooling' | 'dropout' | 'normalization' | 'input' | 'output' | 'hidden' | 'other';
+enARCHITECTURES: 'deepFeedForwardNN'  |  'convolutionalNN' | 'recurrentNN' | 'LongShortTermMemoryNN' | 'generativeAdversarialNN' | 'other' ;
+
+TIME: INT(':')INT;
+DATE: INT('.'INT)('.'INT);
+REFERENCE: INT('.'INT)*;
+
+//WEEKDAY:"monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday";
+

@@ -1,0 +1,38 @@
+Testing test1_1 of CNN after training1 {
+	description "The trained convolutional neural network is tested on the testing dataset 
+				after the first training of the 1st process iteration. The targetNN takes as 
+				input every image and outputs a probability distribution over 2x10 equivalence classes.
+				The targetNN's recognized equivalence classes are compared to the expected equivalence classes."
+	objectives "The test monitoring data, such as accuracy, loss, confusion matrices and different image grids is generated from the results."
+	datasets ds_test
+}
+
+Testing test1_2 of CNN after training1{
+	description "The trained convolutional neural network is tested on the training dataset 
+				after the first training of the 1st process iteration. The targetNN takes as 
+				input every image and outputs a probability distribution over 2x10 equivalence classes.
+				The targetNN's recognized equivalence classes are compared to the expected equivalence classes."
+	objectives "The test monitoring data, such as accuracy, loss, confusion matrices and different image grids is generated from the results."
+	datasets ds_train_1
+}
+
+Testing test1_3 of CNN after training1{
+	description "The trained convolutional neural network is tested on the development dataset 
+				after the first training of the 1st process iteration. The targetNN takes as 
+				input every image and outputs a probability distribution over 2x10 equivalence classes.
+				The recognized equivalence classes are compared to the expected equivalence classes."
+	objectives "The test monitoring data, such as accuracy, loss, confusion matrices and different image grids is generated from the results."
+	datasets ds_dev_1
+}
+
+Testing test2_1 of CNN after training2{
+	description "The trained convolutional neural network is tested on the testing dataset 
+				after the first training of the 2nd process iteration. The targetNN takes as 
+				input every image and outputs a probability distribution over 2x10 equivalence classes.
+				The targetNN's recognized equivalence classes are compared to the expected equivalence classes."
+	objectives "The test monitoring data, such as accuracy, loss, confusion matrices and different image grids is generated from the results."
+	datasets ds_test
+}
+
+
+

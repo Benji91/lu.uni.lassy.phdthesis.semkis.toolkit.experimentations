@@ -1,0 +1,79 @@
+KeyProperties{
+	QualitativeKeyProperties {
+		NominalKeyProperty nkp1 {
+			RecognitionAnomaly recoanomly_seven {
+				description "Seven recognised often as Two or One"
+				equivalenceClasses seven
+			}
+		}
+		
+		OrdinalKeyProperty okp1 {
+			RecognitionEvaluation recoeval_seven {
+				equivalenceClasses seven
+				recognitionValue bad
+			}
+		}
+		
+		LogicalKeyProperty lkp1 {
+			EquivalenceClassRecognitionCorrectness erc {
+				recognitionCorrectness incorrectly
+				classificationCorrectness correctly
+				equivalenceClasses seven
+			} 
+		}		
+	}
+	
+	QuantitativeKeyProperties {
+		ContinuousKeyProperty ckp1 {
+			name "test dataset size"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_test {
+				accuracyValue 99.47
+			}
+			
+		}
+		
+		ContinuousKeyProperty ckp2 {
+			name "test dataset size"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_test_seven {
+				equivalenceClasses seven
+				accuracyValue 0.9
+			}
+		}
+		
+
+		
+		DiscreteKeyProperty dkp1 {
+			name "test dataset size for digit 7"
+			description "Number of images of digit 7 in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+		
+			QuantitativeDatasetAnalysis dstest_data for dataset dstest{
+				equivalenceClasses seven
+				size 1028
+			}
+		}
+		
+		DiscreteKeyProperty dkp2 {
+			name "Digit 7 incorrect recognition"
+			description "Number of images of digit 7 have beeing incorrectly recognised."
+			priority high
+			version 1.0
+			status toBeDiscussed
+				
+			incorrectly recognized QuantitativeDataAnalysis inc_reco for dataset dstest {
+				equivalenceClasses seven
+				amount 9
+			}
+		}
+	}
+}

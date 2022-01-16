@@ -1,0 +1,433 @@
+Datasets {
+	Dataset dstrain for processIteration 0 {
+		name 'training dataset'
+		description 'Dataset used for training the targetNN'
+		datasetType training
+		version 0.1
+		size 54000
+		format [ 28 x 28 x 54000]
+		equivalenceClasses{
+			zero	(numElements 5310),
+			one		(numElements 6051),
+			two		(numElements 5389),
+			three	(numElements 5520), 
+			four	(numElements 5242), 
+			five	(numElements 4859), 
+			six		(numElements 5333), 
+			seven	(numElements 5655), 
+			eight	(numElements 5261), 
+			nine	(numElements 5380)
+		}
+	}
+	
+	Dataset dstest for processIteration 0 {
+		name 'testing dataset'
+		description 'Dataset used for testing the targetNN after training'
+		datasetType testing
+		version 0.1
+		size 10000
+		format [ 28 x 28 x 10000]
+		equivalenceClasses{
+			zero	(numElements 980),
+			one		(numElements 1135),
+			two		(numElements 1032),
+			three	(numElements 1010), 
+			four	(numElements 982), 
+			five	(numElements 892), 
+			six		(numElements 958), 
+			seven	(numElements 1028), 
+			eight	(numElements 974), 
+			nine	(numElements 1009)
+		}
+		
+	}
+	
+	Dataset dsdev for processIteration 0 {
+		name 'development dataset'
+		description 'Dataset used for testing the targetNN during training'
+		datasetType development
+		version 0.1
+		size 6000
+		format [ 28 x 28 x 6000]
+		equivalenceClasses{
+			zero	(numElements 613),
+			one		(numElements 691),
+			two		(numElements 569),
+			three	(numElements 611), 
+			four	(numElements 600), 
+			five	(numElements 562), 
+			six		(numElements 585), 
+			seven	(numElements 610), 
+			eight	(numElements 590), 
+			nine	(numElements 569)
+		}
+	}
+}
+
+
+EquivalenceClasses {
+	EquivalenceClass zero {
+		name 'Digit-One-Images'
+		description 'blabla'
+		value '0'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitZero
+		
+	}
+	EquivalenceClass one {
+		name 'Digit-One-Images'
+		description 'blabla'
+		value '2'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitOne
+	}
+	EquivalenceClass two {
+		name 'Digit-Two-Images'
+		description 'blabla'
+		value '3'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitTwo
+	}
+	
+	EquivalenceClass three {
+		name 'Digit-Three-Images'
+		description 'blabla'
+		value '3'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitThree
+	}
+	
+	EquivalenceClass four {
+		name 'Digit-Four-Images'
+		description 'blabla'
+		value '4'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitFour
+	}
+	
+	EquivalenceClass five {
+		name 'Digit-Five-Images'
+		description 'blabla'
+		value '5'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitFive
+	}
+	
+	EquivalenceClass six {
+		name 'Digit-Six-Images'
+		description 'blabla'
+		value '6'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitSix
+	}
+	
+	EquivalenceClass seven {
+		name 'Digit-Seven-Images'
+		description 'blabla'
+		value '7'
+		acceptanceRule greaterThan 0.9
+		dataElements imgDigitSeven
+	}
+	
+	EquivalenceClass eight {
+		name 'Digit-Eight-Images'
+		description 'blabla'
+		value '8'
+		acceptanceRule greaterThan 0.9	
+		dataElements imgDigitEight
+	}
+	
+	EquivalenceClass nine {
+		name 'Digit-Nine-Images'
+		description 'blabla'
+		value '9'
+		acceptanceRule greaterThan 0.9		
+		dataElements imgDigitNine
+	}
+}
+
+DataElements {
+	DataElement imgDigitOne {
+		name 'Digit One'
+		description 'Image of a white "1" on  black background'
+		imageElements {
+			ImageElement img1{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img1digit {
+						name 'Digit One'
+						description 'White handwritten digit "1"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img1background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitTwo {
+		name 'Digit Two'
+		description 'Image of a white "2" on  black background'
+		imageElements {
+			ImageElement img2{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img2digit {
+						name 'Digit Two'
+						description 'White handwritten digit "2"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img2background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitThree {
+		name 'Digit Three'
+		description 'Image of a white "3" on  black background'
+		imageElements {
+			ImageElement img3{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img3digit {
+						name 'Digit Three'
+						description 'White handwritten digit "3"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img3background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitFour {
+		name 'Digit Four'
+		description 'Image of a white "1" on  black background'
+		imageElements {
+			ImageElement img4{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img4digit {
+						name 'Digit Four'
+						description 'White handwritten digit "4"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img4background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitFive {
+		name 'Digit Five'
+		description 'Image of a white "5" on  black background'
+		imageElements {
+			ImageElement img5{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img5digit {
+						name 'Digit Five'
+						description 'White handwritten digit "5"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img5background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitSix {
+		name 'Digit Six'
+		description 'Image of a white "6" on  black background'
+		imageElements {
+			ImageElement img6{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img6digit {
+						name 'Digit Six'
+						description 'White handwritten digit "6"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img6background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitSeven {
+		name 'Digit Seven'
+		description 'Image of a white "6" on  black background'
+		imageElements {
+			ImageElement img6{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img6digit {
+						name 'Digit Seven'
+						description 'White handwritten digit "7"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape', 'middleDash', 'curved','noMiddleDash'
+					}
+					ImageContent img7background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitEight {
+		name 'Digit Eight'
+		description 'Image of a white "8" on  black background'
+		imageElements {
+			ImageElement img8{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img8digit {
+						name 'Digit Eight'
+						description 'White handwritten digit "8"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img8background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	DataElement imgDigitNine {
+		name 'Digit Nine'
+		description 'Image of a white "9" on  black background'
+		imageElements {
+			ImageElement img9{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img9digit {
+						name 'Digit Nine'
+						description 'White handwritten digit "9"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img9background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+	
+	DataElement imgDigitZero {
+		name 'Digit Zero'
+		description 'Image of a white "0" on  black background'
+		imageElements {
+			ImageElement img0{
+				format [28 x 28]
+				pixelFormat rgb
+				pixelValueIntervals [0;255]
+				imageContent {
+					ImageContent img0digit {
+						name 'Digit Zero'
+						description 'White handwritten digit "0"'
+						position center
+						pixelValueIntervals [220;255]
+						customFeatures 'white shape'
+					}
+					ImageContent img0background {
+						name 'Background'
+						description 'Black background'
+						position background
+						pixelValueIntervals [0;50]
+						customFeatures 'black background'
+					}
+				}
+			}
+		}
+	}
+	
+
+	
+}

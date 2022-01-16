@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SEMKIS Common
+Bundle-SymbolicName: lu.uni.lassy.phd.dsl.semkis.common;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: lu.uni.lassy.phd.dsl.semkis.common.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.editors,
+ org.eclipse.osgi,
+ org.eclipse.core.runtime,
+ org.apache.log4j,
+ org.eclipse.core.resources,
+ org.eclipse.emf.common,
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext,
+ org.eclipse.xtext.ui,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common,
+ org.eclipse.sirius.ext.base,
+ org.eclipse.emf.transaction,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.osgi.util,
+ org.slf4j.api
+Bundle-ActivationPolicy: lazy
+Export-Package: 
+ lu.uni.lassy.log,
+ lu.uni.lassy.phd.dsl.semkis.common;uses:="org.osgi.framework,org.eclipse.ui.plugin",
+ lu.uni.lassy.phd.dsl.semkis.common.log,
+ lu.uni.lassy.phd.dsl.semkis.common.nature;uses:="org.eclipse.core.resources",
+ lu.uni.lassy.phd.dsl.semkis.common.utils;
+  uses:="org.eclipse.emf.common.util,
+   org.eclipse.xtext.ui.resource,
+   org.eclipse.swt.widgets,
+   org.eclipse.core.resources,
+   org.eclipse.emf.ecore.resource,
+   org.eclipse.sirius.business.api.session",
+ lu.uni.lassy.phd.dsl.semkis.preferences
+Bundle-ClassPath: .,
+ libs/json-simple-1.1.jar,
+ libs/mysql-connector-java-5.1.18-bin.jar
+Bundle-Vendor: LASSY-Universty of Luxembourg
+

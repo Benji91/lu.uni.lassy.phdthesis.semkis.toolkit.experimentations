@@ -1,0 +1,44 @@
+Test-Monitoring-Data r1_image_grids {
+	name 'Image Grids'
+	description 'We have 5 different grids of images to be verified. These grids are used to analyse the correctly and incorrectly recognised images. 
+				Additionally, we use the grids of the raw datasets to visualise the used data for training and testing the targetNN.
+				The images show some issues with recognition of state transitions where both digits must be changed in the same time. 
+				There are several issues with noisy images.'
+	artefacts r1_cr_images, r1_ncr_images, training_r1_images, development_r1_images, testing_r1_images
+	observations obs8, obs9, obs10, obs11
+}
+	
+	Artefact r1_cr_images {
+		name "Grid of Correctly Recognised images"
+		description "Grid of correctly recognised images after the 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "r1_cr_images.html"	
+	}
+	
+	Artefact r1_ncr_images {
+		name "Grid of Incorrectly Recognised images"
+		description "Grid of incorrectly recognised images after the 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "r1_ncr_images.html"	
+	}
+	
+	Artefact training_r1_images {
+		name "Grid of training images used at 1st iteration"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "training_r1_images.html"	
+	}
+	
+	Artefact development_r1_images {
+		name "Grid of development images used at 1st iteration"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "development_r1_images.html"	
+	}
+	
+	Artefact testing_r1_images {
+		name "Grid of testingdu b images used at 1st iteration"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "testing_r1_images.html"	
+	}

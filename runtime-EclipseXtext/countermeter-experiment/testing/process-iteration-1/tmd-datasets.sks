@@ -1,0 +1,30 @@
+Test-Monitoring-Data r1_raw_datasets {
+	name 'Raw Datasets (Training, Testing, Development)'
+	description 'There are no specific issues in the equivalence classes. Additional data needs to be generated to improve the datasets.'
+	artefacts r1_testing_images, r1_training_images, r1_development_images
+	observations obs3, obs8, obs10, obs13
+}
+	
+	Artefact r1_testing_images {
+		name "Accuracy and Loss Values"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "testing_r1_images.html"	
+	}
+	
+	
+	Artefact r1_training_images {
+		name "Accuracy and Loss Values"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "training_r1_images.html"	
+	}
+	
+	Artefact r1_development_images {
+		name "Accuracy and Loss Values"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/data/"
+		filename "development_r1_images.html"	
+	}
+	
+	

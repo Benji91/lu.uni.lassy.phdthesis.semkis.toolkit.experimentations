@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="semkis" nsURI="http://www.uni.lu/lassy/phd/dsl/semkis/Semkis"
+    nsPrefix="semkis">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctDatasets">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datasets" upperBound="-1"
+        eType="#//ctDataset" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctDataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="processiteration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclasses" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classsize" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctEquivalenceClasses">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceClasses" upperBound="-1"
+        eType="#//ctEquivalenceClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctEquivalenceClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threshold" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataelements" unique="false"
+        upperBound="-1" eType="#//ctDataElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rnSubEquivalenceClasses"
+        upperBound="-1" eType="#//ctEquivalenceClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctDataElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataElement" upperBound="-1"
+        eType="#//ctDataElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctDataElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="numericalelements" upperBound="-1"
+        eType="#//ctNumericalElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageobjects" upperBound="-1"
+        eType="#//ctImageElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctNumericalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" eType="#//dtRealInterval"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctImageElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pixelformat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intervals" upperBound="-1"
+        eType="#//dtRealInterval" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imagecontent" upperBound="-1"
+        eType="#//ctImageContent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctImageContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enImgContentPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intervals" upperBound="-1"
+        eType="#//dtRealInterval" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//enIMAGEMANIPULATION" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customFeatures" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctRequirements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionalRequirements"
+        eType="#//ctFunctionalRequirements" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonfunctionalRequirements"
+        eType="#//ctNonFunctionalRequirements" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctFunctionalRequirements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
+        eType="#//ctFunctionalRequirement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctFunctionalRequirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetNNinput" eType="#//ctTargetNNInput"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetNNoutput" eType="#//ctTargetNNOutput"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctNonFunctionalRequirements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
+        eType="#//ctNonFunctionalRequirement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctNonFunctionalRequirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accuracy" eType="#//ctTargetAccuracy"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loss" eType="#//ctTargetLoss"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recall" eType="#//ctTargetRecall"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precision" eType="#//ctTargetPrecision"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctTargetNNInput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputdata" upperBound="-1"
+        eType="#//ctInputdata" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctInputdata">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" eType="#//dtRealInterval"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataelements" unique="false"
+        upperBound="-1" eType="#//ctDataElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctTargetNNOutput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" eType="#//dtRealInterval"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputdata" unique="false"
+        upperBound="-1" eType="#//ctInputdata"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctTargetAccuracy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min_acc" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max_acc" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_acc" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctTargetLoss">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min_loss" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max_loss" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_loss" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctTargetRecall">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min_recall" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max_recall" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_recall" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctTargetPrecision">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min_precision" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max_precision" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_precision" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctKeyProperties">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualKeyproperties" upperBound="-1"
+        eType="#//ctQualitativeKeyProperties" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quanKeyproperties" upperBound="-1"
+        eType="#//ctQuantitativeKeyProperties" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctQualitativeKeyProperties">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nominalkeyproperties" upperBound="-1"
+        eType="#//ctNominalKeyProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ordinalkeyproperties" upperBound="-1"
+        eType="#//ctOrdinalKeyProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalkeyproperties" upperBound="-1"
+        eType="#//ctLogicalKeyProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctNominalKeyProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="untestedClasses" upperBound="-1"
+        eType="#//ctUntestedClasses" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recognitioncharacteristics"
+        upperBound="-1" eType="#//ctRecognitionCharacteristic" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recoAnamalies" upperBound="-1"
+        eType="#//ctRecoAnomaly" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctRecognitionCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ratio" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="characteristics" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctUntestedClasses">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctRecoAnomaly">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataelements" unique="false"
+        upperBound="-1" eType="#//ctDataElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctOrdinalKeyProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recognitionevaluations"
+        upperBound="-1" eType="#//ctRecognitionEvaluation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclassselection"
+        upperBound="-1" eType="#//ctEquivalenceclassSelection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctRecognitionEvaluation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recognitionvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctEquivalenceclassSelection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threshold" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctLogicalKeyProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ecRecognitioncorrectnesses"
+        upperBound="-1" eType="#//ctEquivClassRecoCorrectness" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataRecognitionCorrectnesses"
+        upperBound="-1" eType="#//ctDataClassRecoCorrectness" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctEquivClassRecoCorrectness">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recognitioncorrectness"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationcorrectness"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctDataClassRecoCorrectness">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recognitioncorrectness"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationcorrectness"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataelements" unique="false"
+        upperBound="-1" eType="#//ctDataElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctQuantitativeKeyProperties">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="continuouskeyproperties"
+        upperBound="-1" eType="#//ctContinuousKeyProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="discretekeyproperties"
+        upperBound="-1" eType="#//ctDiscreteKeyProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctContinuousKeyProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accuracy" eType="#//ctReachedAccuracy"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loss" eType="#//ctReachedLoss"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recall" eType="#//ctReachedRecall"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precision" eType="#//ctReachedPrecision"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctReachedAccuracy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accuracy_value" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctReachedLoss">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loss_value" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctReachedRecall">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recall_value" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctReachedPrecision">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precision_value" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctDiscreteKeyProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantitativedataanalysis"
+        eType="#//ctQuantitativeDataAnalysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantitativedatasetanalysis"
+        eType="#//ctQuantitativeDatasetAnalysis" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctQuantitativeDatasetAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ctQuantitativeDataAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recognition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//ctDataset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalenceclass" unique="false"
+        upperBound="-1" eType="#//ctEquivalenceClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="dtRealInterval">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerbound" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperbound" eType="#//REAL"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="enIMAGEMANIPULATION">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pixel" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="faktor" eType="#//REAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pixLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pixHeigth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="REAL">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="neg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IMAGEPOSITION">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

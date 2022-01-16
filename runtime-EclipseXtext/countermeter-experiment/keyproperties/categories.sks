@@ -1,0 +1,44 @@
+Analysis TestMonitoringDataAnalysis {
+	aptitude NNAptitude
+}
+
+Category catQuantitative{
+	type quantitative
+	name 'Quantitative Properties'
+	description 'Quantitative properties are usually described as a numerical value. (e.g. dataset size, accuracy, loss, number of recognised data)'
+	
+	Category catDisc{
+		type discrete
+		name 'Quantitative Discrete Properties'
+		description 'Discrete properties have their value belonging to a countable set such as dataset size, categorisations, number of correctly and incorrectly classified data...'
+	}
+	Category catCon{
+		type continuous
+		name 'Quantitative Continuous Properties'
+		description 'Continuous properties have their value belonging to a non-countable set. (e.g. accuracy, loss…)'	
+	}	
+}
+
+Category catQualitative{
+	type qualitative
+	name 'Qualitative Properties'
+	description 'Qualitative properties are usually represented as a textual or boolean expression.'
+	
+	Category catNom{
+		type nominal
+		name 'Qualitative Nominal Properties'
+		description 'Nominal properties are characterized as textual representations. These properties are usually only named in textual format. (e.g. data description, image content, …)'
+	}
+ 	Category catOrd {
+ 		type ordinal
+		name 'Qualitative Ordinal Properties'
+		description 'Ordinal properties are characterized as textual representation with a certain order. These properties are usually defined as a name, which is part of an ordered set. (e.g. categorical evaluation of data classification…)'
+	}
+
+	Category catLog {
+		type logical
+		name 'Qualitative Logical Properties'
+		description 'Logical properties are characterized typically as a boolean expression. These properties usually can only be true or false (e.g. correctness of data classification…)'
+	}	
+
+}

@@ -1,0 +1,31 @@
+Dataset ds_train_1 for process-iteration 1{
+	name "training dataset"
+	description "The training dataset consists randomly selected images from the raw dataset."
+	version 1.0
+	size 645
+	data-format "[0,255]^310x330"
+	equivalenceclasses  TwoDigitNumber
+}
+
+Dataset ds_train_2 for process-iteration 2{
+	name "training dataset - iteration 2"
+	description "The training dataset consists randomly selected images from the raw dataset."
+	version 0.5
+	size 645
+	data-format "[0,255]^310x330"
+	equivalenceclasses  TwoDigitNumber
+	datasets ds_train_1, ds_syn_train_1
+}
+
+Dataset ds_syn_train_1 for process-iteration 2 {
+	name "synthetic training dataset - iteration 2"
+	description "The training dataset consists randomly selected images from the raw dataset."
+	size 645
+	data-format "[0,255]^310x330"
+	equivalenceclasses  TwoDigitNumber
+}
+
+
+
+
+

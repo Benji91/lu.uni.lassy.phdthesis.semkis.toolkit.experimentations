@@ -1,0 +1,17 @@
+Test-Monitoring-Data r1_diagram {
+	name 'Training Diagram'
+	description 'The curves of the accuracy and loss are converging to an optimal value. There are no signs of overfitting in the graph.'
+	artefacts r1_testing_images, r1_training_images, r1_development_images
+	observations obs7
+}
+	
+	Artefact r1_cnn_training_diagram {
+		name "Accuracy and Loss Values"
+		description "Text File that contains the computer accuracies and losses for 1st iteration"
+		storage-location "./results/analysis/cnn/training/"
+		filename "cnn_training_diagram_r1.png"	
+	}
+	
+	
+	
+	

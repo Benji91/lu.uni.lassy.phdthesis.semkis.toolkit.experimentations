@@ -1,0 +1,34 @@
+Dataset ds_raw{
+	name "raw datasets"
+	description "The training, testing and development dataset generated out of the classified data."
+	version 0.2
+	datasets ds_train, ds_dev, ds_test
+}
+
+Dataset ds_train {
+	name "raw datasets"
+	description "The training, testing and development dataset generated out of the classified data."
+	version 0.2
+	equivalenceclasses  TwoDigitNumber
+	datasets ds_train_1
+}
+
+Dataset ds_dev {
+	name "development dataset"
+	description "The training dataset consists randomly selected images from the raw dataset."
+	version 0.2
+	size 40
+	data-format "[0,255]^310x330"
+	equivalenceclasses  TwoDigitNumber	
+	datasets ds_dev_1
+}
+
+Dataset ds_test {
+	name "testing dataset"
+	description "These images consist of a random selection of meter counter states with digital numbers in [00..99]. The images show sharp, dark, bright or dirty digits.
+		Moreover, some images represent shifted digits to model the change to the next greater integer value."
+	version 1.0
+	size 172
+	data-format "[0,255]^310x330"
+	equivalenceclasses  TwoDigitNumber
+}

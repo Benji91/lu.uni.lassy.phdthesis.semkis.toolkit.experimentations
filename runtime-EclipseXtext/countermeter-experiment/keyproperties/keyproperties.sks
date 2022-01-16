@@ -1,0 +1,172 @@
+KeyProperties in category catQuantitative.catCon {
+	KeyProperty KP1 in category catQuantitative.catCon  {
+		name 'Training Data accuracy'
+		description "TargetNN recognises 99.97% of the training data"
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP2 in category catQuantitative.catCon  {
+		name 'Development Data accuracy'
+		description "TargetNN recognises 99.25% of the development data"
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+
+	KeyProperty KP3 in category catQuantitative.catCon {
+		name 'Testing Data accuracy'
+		description "TargetNN recognises 99.97% of the testing data"
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP6 in category catQuantitative.catCon {
+		name 'Number of Incorrect Recognition'
+		description "Continuous NN has an average loss of 0.02624"
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	} 
+}
+
+KeyProperties in category catQuantitative.catDisc {
+	KeyProperty KP4 in category catQuantitative.catDisc{
+		name 'Number of Incorrect Recognition'
+		description "TargetNN recognises the left digit on 5 images 
+			incorrectly."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP5 in category catQuantitative.catDisc {
+		name 'Number of Incorrect Recognition'
+		description "NN recognises the right digit on 2 images 
+			incorrectly."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	} 
+	
+	KeyProperty KP8 in category catQuantitative.catDisc {
+		name 'test dataset size'
+		description "The test dataset size is 172"
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	
+	
+	
+	
+	KeyProperty KP7 in category catQuantitative.catDisc {
+		name 'Number of Incorrect Recognition'
+		description "320 (all) images have been correctly classified."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	} 
+			
+}
+
+KeyProperties in category catQualitative.catLog {
+	KeyProperty KP9 in category catQualitative.catLog {
+		name 'Correctly Recognised Left digits'
+		description "TargetNN recognises the left digit in ec_tens={1,3,6,7} correctly."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP10 in category catQualitative.catLog {
+		name 'Incorrectly Recognised Left digits'
+		description "TargetNN recognises the left digit in ec_tens={0,2,4,5,8,9} incorrectly."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	
+	}
+	
+	KeyProperty KP11 in category catQualitative.catLog {
+		name 'Correctly Recognised Right digits'
+		description "TargetNN recognises the right digit in ec_ones={1,2,3,4,5,7,8,9} correctly."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP12 in category catQualitative.catLog {
+		name 'Incorrectly Recognised Right digits'
+		description "TargetNN recognises the right digit in ec_ones={0,6} incorrectly."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+}
+
+KeyProperties in category catQualitative.catNom {
+	KeyProperty KP13 in category catQualitative.catNom {
+		name 'Unclear Recognition'
+		description "TargetNN’s recognition of ec_class = {30} has not been tested."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP15 in category catQualitative.catNom {
+		name 'Recognition Tolerance'
+		description "TargetNN recognises the sate of a meter counter at a 60% certitude, if both digits are shifted."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP16 in category catQualitative.catNom {
+		name 'Recognition Tolerance'
+		description "TargetNN does not always recognise images of shifted digits on sharp and dirty images."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+}
+
+
+KeyProperties in category catQualitative.catOrd {
+	KeyProperty KP14 in category catQualitative.catOrd {
+		name 'Recognition Policy'
+		description "The equivalence class to which an image will be declared to belong to is the one for which the recognition probability is the highest."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+	
+	KeyProperty KP17 in category catQualitative.catOrd {
+		name 'Recognition Precision'
+		description "TargetNN recognises the right digit on an image very well."
+		priority high
+		author "BJ"
+		version 1.0
+		status toBeDiscussed
+	}
+}

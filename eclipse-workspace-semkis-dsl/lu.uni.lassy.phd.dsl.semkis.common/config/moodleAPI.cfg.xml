@@ -1,0 +1,30 @@
+<!--
+    Copyright (c) 2017 University of Luxembourg.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        JAHIC Benjamin - initial API and implementation
+ -->
+<moodle-configuration>
+	<connection name = "Moodle Test server - Web Services API with a token">
+		<db_host>proactive.uni.lu</db_host>
+		<db_port>3306</db_port>
+		<db_schema>moodle312</db_schema>
+		<db_user>moodle</db_user>
+		<db_pass>m00dle29</db_pass>
+
+		<domain>proactive.uni.lu</domain>
+		<path_home>/moodle-test31</path_home>
+		<path_server>/webservice/rest/server.php</path_server>
+
+		<param_name_format>moodlewsrestformat=</param_name_format>
+		<param_name_function>wsfunction=</param_name_function>
+		<param_name_token>wstoken=</param_name_token>
+
+		<restformat>json</restformat>
+		<token>f6b4e0cc16d6cedd1eb71e3ed1870141</token>
+	</connection>
+</moodle-configuration>

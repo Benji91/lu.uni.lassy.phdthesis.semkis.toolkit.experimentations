@@ -1,0 +1,85 @@
+
+
+Requirements {
+	functional Requirements {
+		Requirement FR1 in category catQuantitative.catCon {
+			priority high
+			description "A digital digit shall be represented with 7 segments."
+			purpose "Customer's uses only specific digits to represent a meter counter"
+			output "images of a digital digits"
+		}
+		
+		Requirement FR2 in category catQuantitative.catDisc{
+			priority high
+			description "The meter counter state shall be represented as digital two-digit numbers from 00 to 99."
+			purpose "Precise illustration of the recognised class"
+			output "Two-value format of the equivalence classes"
+		}
+		
+		Requirement FR5 in category catQuantitative.catDisc {
+			priority low
+			description "The image size shall be fixed to 310x330 pixels."
+			purpose "Fixing the size of the images"
+			output "All images are of size 310x330"
+		}
+		Requirement FR3 in category catQualitative.catOrd {
+			priority high
+			description "The incrementation of a meter counter shall be 
+					represented as shifts of the incremented digit(-s) 
+					from top to down."
+			purpose "Images Representation of the value changes of a 
+					meter counter"
+			output "Images of value changes of meter counters"
+		}
+		
+		Requirement FR4 in category catQualitative.catNom {
+			priority high
+			description "Images shall be sharp, dark, bright or dusty 
+						images."
+			purpose "Description of different types of images in 
+					different szenarios"
+			output "An image can be represented in different ways."
+		}
+	
+			
+		Requirement FR6  in category catQualitative.catNom {
+			priority high
+			description "NN shall recognise the state of a two-digit 
+			meter counter by outputting the corresponding integer value."
+			purpose "Defining the targetNN's output"
+			output "The targetNN's output is converted to two integers."
+		}
+	}
+	
+	nonfunctional Requirements{
+
+		
+		Requirement NFR1 in category catQuantitative.catCon {
+			priority high
+			description "NN shall recognise >99% of training data."
+			purpose "Sufficient amount of correctly recognised images"
+			output "Mostly correctly recognised images, but rarely incorrectly recognised images may occur"
+		}
+		
+		Requirement NFR2 in category catQuantitative.catCon {
+			priority high
+			description "NN shall recognise >97% of development data."
+			purpose "Sufficient amount of correctly recognised images"
+			output "Mostly correctly recognised images, but rarely incorrectly recognised images may occur"
+		}
+		
+		Requirement NFR3 in category catQuantitative.catCon {
+			priority high
+			description "NN shall recognise >95% of testing data."
+			purpose "Sufficient amount of correctly recognised images"
+			output "Mostly correctly recognised images, but moderately incorrectly recognised images may occur"
+		}
+		
+		Requirement NFR4 in category catQuantitative.catCon {
+			priority high
+			description "NN’s loss shall be less than 0.02."
+			purpose "Sufficient amount of correctly and precisely recognised images"
+			output "Mostly the targetNN recognised precisely hte image"
+		}	
+	}
+}

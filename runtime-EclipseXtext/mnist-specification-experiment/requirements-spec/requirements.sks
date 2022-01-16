@@ -1,0 +1,106 @@
+Requirements {
+	functional Requirements {
+		Requirement FR1 {
+			NeuralNetworksInput {
+				neuronsSize 784
+				neuronsFormat [28,28]
+				inputData {
+					InputData inputSeven{
+						neuronValues [0;255]
+						dataElements imgDigitSeven
+					}
+				}}}
+		Requirement FR2 {
+			NeuralNetworksOutput {
+				neuronsSize 10
+				neuronsFormat [1,10]
+				outputValueRange [0;1]
+				outputNeurons [seven]
+				inputData FR1.inputSeven
+			}
+		}}
+	nonfunctional Requirements {
+		Requirement NFR3 {
+			description 'Global accuracy on testing dstest'
+			purpose 'Defining the tolerated accuracy on the testing dataset'
+			priority high
+			TargetAccuracy tarGlobalTestAcc for dataset dstest{
+				minAccuracy 98
+				maxAccuracy 100
+				targetAccuracy 99.7
+			}}
+		
+		Requirement NFR7 {
+			description 'Accuracy on testing dataset for ec7'
+			purpose 'Defining the tolerated accuracy for ec7 on the testing dataset'
+			priority high
+			TargetAccuracy tarEcSevenAcc for dataset dstest{
+				equivalenceClasses seven
+				minAccuracy 99
+				maxAccuracy 100
+				targetAccuracy 99.9
+			}}
+		
+		Requirement NFR1 {
+			description 'Global accuracy on training dataset'
+			purpose 'Defining the tolerated accuracy on the training dataset'
+			priority high
+			TargetAccuracy tarGlobalTrainAcc for dataset dstrain{
+				minAccuracy 99
+				maxAccuracy 100
+				targetAccuracy 99.9
+			}
+		}
+		
+		
+		Requirement NFR2 {
+			description 'Global accuracy on development dataset'
+			purpose 'Defining the tolerated accuracy on the development dataset'
+			priority high
+			TargetAccuracy tarGlobalDevAcc for dataset dsdev{
+				minAccuracy 98
+				maxAccuracy 100
+				targetAccuracy 99.5
+			}
+		}
+		
+		
+		
+		Requirement NFR4 {
+			description 'Global loss on training dataset'
+			purpose 'Defining the tolerated loss on the training dataset'
+			priority high
+			TargetAccuracy tarGlobalTrainLoss for dataset dstrain{
+				minAccuracy 0.001
+				maxAccuracy 0.010
+				targetAccuracy 0.004
+			}
+		}
+		
+		Requirement NFR5 {
+			description 'Global loss on development dataset'
+			purpose 'Defining the tolerated loss on the development dataset'
+			priority high
+			TargetAccuracy tarGlobalDevLoss for dataset dsdev{
+				minAccuracy 0.009
+				maxAccuracy 0.03
+				targetAccuracy 0.03
+			}
+		}
+		
+		Requirement NFR6 {
+			description 'Global loss on testing dstest'
+			purpose 'Defining the tolerated loss on the testing dataset'
+			priority high
+			TargetAccuracy tarGlobalTestLoss for dataset dstest{
+				minAccuracy 0.009
+				maxAccuracy 0.03
+				targetAccuracy 0.02
+			}
+		}
+		
+		
+		
+		
+	}
+}

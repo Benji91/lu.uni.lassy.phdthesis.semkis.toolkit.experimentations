@@ -1,0 +1,112 @@
+Observation obs1 {
+	category quantitative
+	subcategory discrete
+	description "Number of CR and IR images needs to be specified 
+			precisely."
+	key-properties KP4, KP5	
+	test-monitoring-data cm_testing, cm_training, cm_development
+}
+
+Observation obs2 {
+	category quantitative
+	subcategory discrete
+	description "Number of CR/IR images per equivalence class"
+	key-properties KP4, KP5	
+	test-monitoring-data cm_testing, cm_training, cm_development
+}
+
+Observation obs3 {
+	category quantitative
+	subcategory discrete
+	description "Size of datasets"
+	key-properties KP8	
+	test-monitoring-data r1_raw_datasets
+}
+
+Observation obs4 {
+	category quantitative
+	subcategory continuous
+	description "Ratio of CR/IR images"
+	key-properties KP1, KP2, KP3
+	test-monitoring-data cm_testing, cm_training, cm_development
+}
+
+
+Observation obs5 {
+	category quantitative
+	subcategory continuous
+	description "Ratio of CR/IR images per equivalence class"
+	key-properties KP9, KP10	
+	test-monitoring-data cm_testing, cm_training, cm_development
+}
+
+
+Observation obs6 {
+	category quantitative
+	subcategory continuous
+	description "Ratio of CR/IR images per equivalence class"
+	key-properties KP9, KP10, KP11, KP12
+	test-monitoring-data cm_testing, cm_training, cm_development
+}
+
+Observation obs7 {
+	category quantitative
+	subcategory continuous
+	description "Neural network’s recognition precision"
+	key-properties KP6	
+	test-monitoring-data loss_train, loss_dev, loss_test, r1_diagram
+}
+
+Observation obs8 {
+	category qualitative
+	subcategory logical
+	description "Data and classification correctness"
+	key-properties KP7
+	test-monitoring-data r1_raw_datasets, r1_image_grids
+}
+
+
+Observation obs9 {
+	category qualitative
+	subcategory logical
+	description "Correctness of the classification and recognition"
+	key-properties KP10, KP11, KP12
+	test-monitoring-data r1_image_grids
+}
+
+Observation obs10 {
+	category qualitative
+	subcategory nominal
+	description "Data consistency"
+	key-properties KP8, KP13
+	test-monitoring-data r1_raw_datasets, r1_image_grids
+
+}
+
+Observation obs11 {
+	category qualitative
+	subcategory nominal
+	description "Groups of incorrectly recognised images"
+	key-properties KP10, KP11, KP12
+	test-monitoring-data r1_image_grids
+}
+
+Observation obs12 {
+	category qualitative
+	subcategory ordinal
+	description "Recognition weaknesses and strengths"
+	key-properties KP16
+	test-monitoring-data acc_train, acc_dev, acc_test, r1_image_grids, cm_testing, cm_training, cm_development, loss_train, loss_dev, loss_test
+	
+}
+
+Observation obs13 {
+	category qualitative
+	subcategory ordinal
+	description "Threshold for belonging to an equivalence class"
+	key-properties KP14, KP15, KP17
+	test-monitoring-data r1_raw_datasets
+}
+
+
+

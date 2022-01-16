@@ -1,0 +1,25 @@
+Dataset ds_ref {
+	name "Reference Images"
+	description "The reference images represent a digital digit in [0...9]. 
+				These images are used as reference to build a set of counter meter images."
+	size 10
+	data-format "[0,255]^310x165"
+	type input
+	equivalenceclasses SingleDigit
+}
+	 
+Dataset ds_countermeter{
+	name "Raw countermeter dataset"
+	description "A set of countermeter images built out of the reference images.
+				We concatenate all possible combinations of two reference images to obtain the 
+				representative classified images of meter counter states. The concatenated images 
+				show all representative and sharp digital numbers in [00..99]."
+	size 685
+	data-format "[0,255]^310x330"
+	type input
+	equivalenceclasses  TwoDigitNumber
+}
+ 
+
+
+

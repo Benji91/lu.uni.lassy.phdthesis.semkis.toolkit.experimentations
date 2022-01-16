@@ -1,0 +1,34 @@
+<!--
+    Copyright (c) 2017 University of Luxembourg.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        JAHIC Benjamin - initial API and implementation
+ -->
+<moodle-configuration>
+	<connection name = "Moodle Test server - Web Services API without a token">
+		<domain>localhost:8888</domain>
+		<path_home>/moodle31</path_home>
+		<path_server>/webservice/rest/server.php</path_server>
+
+		<param_name_format>moodlewsrestformat=</param_name_format>
+		<param_name_function>wsfunction=</param_name_function>
+		<param_name_token>wstoken=</param_name_token>
+	
+		<restformat>json</restformat>
+		<token>/</token>
+
+		<path_token>/login/token.php</path_token>
+		<param_name_username>username=</param_name_username>
+		<param_name_password>password=</param_name_password>
+		<param_name_service>service=</param_name_service>
+	
+		<service_name>moodle_tesma_generator</service_name>
+		<username>admin</username>
+		<password>12345</password>
+		
+	</connection>
+</moodle-configuration>

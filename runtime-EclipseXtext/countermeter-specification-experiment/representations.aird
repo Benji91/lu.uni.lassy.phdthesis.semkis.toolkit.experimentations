@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_rBGdcIDfEeuiZvBYoYlUBw" version="14.3.1.202003261200">
+  <semanticResources>Requirements/requirement.sks</semanticResources>
+  <semanticResources>requirements-spec/requirements.sks</semanticResources>
+  <semanticResources>dataset-spec/dataset.sks</semanticResources>
+  <semanticResources>keyproperties-spec/keyproperties.sks</semanticResources>
+  <semanticResources>keyproperties-spec/quanti-keyproperties.sks</semanticResources>
+  <semanticResources>keyproperties-spec/qualit-keyproperties.sks</semanticResources>
+  <semanticResources>keyproperties-spec/qualit-keyproperties-it2.sks</semanticResources>
+  <semanticResources>keyproperties-spec/quanti-keyproperties-it2.sks</semanticResources>
+</viewpoint:DAnalysis>

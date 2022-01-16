@@ -1,0 +1,19 @@
+Training training1 of CNN {
+	training-id 1
+	description "The convolutional neural network is trained on the initial training dataset of the 1st process iteration."
+	epochs 25
+	batch-size 16
+	shuffle true
+	loss-function binary_crossentropy
+	training-datasets ds_train_1
+	development-datasets ds_dev_1
+	tests test1_1, test1_2, test1_3
+}	
+		
+Training training2 of CNN{
+	training-id 2
+	description "The convolutional neural network is trained on the training dataset of the 2nd process iteration.
+				The training dataset has been augmented with synthetic data."
+	training-datasets ds_train
+	development-datasets ds_dev
+}

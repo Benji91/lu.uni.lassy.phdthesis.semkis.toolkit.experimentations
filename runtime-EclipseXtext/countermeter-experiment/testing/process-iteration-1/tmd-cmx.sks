@@ -1,0 +1,67 @@
+Test-Monitoring-Data cm_testing {
+	name 'Confusion Matrix on Testing Dataset'
+	description 'Most of the images have been recognised correctly. There are first irregularties on the left digit. Clusters detected on the equivalence class 0 and 9.'
+	artefacts r1_cm_testing_left_digit, r1_cm_testing_right_digit 
+	observations obs1, obs2, obs4, obs5, obs6, obs12
+}
+
+Test-Monitoring-Data cm_training {
+	name 'Confusion Matrix on Training Dataset'
+	description 'Most of the images have been recognised correctly. There are no cluster of incorrectly recognised images.'
+	artefacts r1_cm_training_left_digit, r1_cm_training_right_digit 
+	observations obs1, obs2, obs4, obs5, obs6, obs12
+	
+}
+
+Test-Monitoring-Data cm_development {
+	name 'Confusion Matrix on Development Dataset'
+	description 'Most of the images have been recognised correctly. First irregularities have been detected on the recognition of the left digit. There are no specific equivalence classes affected.'
+	artefacts r1_cm_development_left_digit, r1_cm_development_right_digit 
+	observations obs1, obs2, obs4, obs5, obs6, obs12
+}
+	
+	Artefact r1_cm_testing_right_digit {
+		name "Testing dataset's confusion matrix of the right digit"
+		description "Matrix containing the correctly and incorrectly recognizes images"
+		storage-location "./results/analysis/cnn/confusion/"
+		filename "r1_testing_d1_confusionmatrix_html.html"	
+	}
+
+	Artefact r1_cm_testing_left_digit {
+		name "Testing dataset's confusion matrix of the left digit"
+		description "Matrix containing the correctly and incorrectly recognizes images"
+		storage-location "./results/analysis/cnn/confusion/"
+		filename "r1_testing_d1_confusionmatrix_html.html"	
+	}
+	
+	Artefact r1_cm_training_left_digit {
+		name "Training dataset's confusion matrix of the left digit"
+		description "Matrix containing the correctly and incorrectly recognizes images"
+		storage-location "./results/analysis/cnn/confusion/"
+		filename "r1_training_d1_confusionmatrix_html.html"	
+	}
+	
+	Artefact r1_cm_training_right_digit {
+		name "Training dataset's confusion matrix of the right digit"
+		description "Matrix containing the correctly and incorrectly recognizes images"
+		storage-location "./results/analysis/cnn/confusion/"
+		filename "r1_training_d2_confusionmatrix_html.html"	
+	}
+	
+	Artefact r1_cm_development_left_digit {
+		name "Development dataset's confusion matrix of the left digit"
+		description "Matrix containing the correctly and incorrectly recognizes images"
+		storage-location "./results/analysis/cnn/confusion/"
+		filename "r1_development_d1_confusionmatrix_html.html"	
+	}
+	
+	Artefact r1_cm_development_right_digit {
+		name "Development dataset's confusion matrix of the right digit"
+		description "Matrix containing the correctly and incorrectly recognizes images"
+		storage-location "./results/analysis/cnn/confusion/"
+		filename "r1_development_d2_confusionmatrix_html.html"	
+	}
+
+
+
+

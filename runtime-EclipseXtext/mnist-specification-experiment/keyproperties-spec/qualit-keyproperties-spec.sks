@@ -1,0 +1,44 @@
+KeyProperties{
+	QualitativeKeyProperties {
+		NominalKeyProperty nkp1 {
+			RecognitionAnomaly recoanomly_seven {
+				description "Seven recognised often as Two or One"
+				equivalenceClasses seven
+			}}
+		OrdinalKeyProperty okp1 {
+			RecognitionEvaluation recoeval_seven {
+				equivalenceClasses seven
+				recognitionValue bad
+			}}
+		LogicalKeyProperty lkp1 {
+			EquivalenceClassRecognitionCorrectness ecCorrectReco {
+				recognitionCorrectness incorrectly
+				classificationCorrectness correctly
+				equivalenceClasses seven
+			}}		
+	}
+	QuantitativeKeyProperties {
+		ContinuousKeyProperty ckp3 {
+			name "testing dataset size"
+			description "Number of images in the used test dataset"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_test {
+				accuracyValue 99.50
+			}}
+		ContinuousKeyProperty ckp2 {
+			name "testing dataset accuracy"
+			description "Accuracy of the correctly recognised data"
+			priority high
+			version 1.0
+			status toBeDiscussed
+			ReachedAccuracy acc_test {
+				equivalenceClasses seven
+				accuracyValue 99.1
+			}}
+	}
+}
+	
+	
+	

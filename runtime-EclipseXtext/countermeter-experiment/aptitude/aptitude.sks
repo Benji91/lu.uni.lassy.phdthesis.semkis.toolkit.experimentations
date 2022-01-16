@@ -1,0 +1,39 @@
+Aptitude  NNAptitude {
+	Strength str1 in category catQuantitative.catCon{
+		description "The targetNN recognised correctly recognise 
+			more than 99% of the training, development and testing 
+			data."
+		status toBeDiscussed
+	}
+
+	
+	Weakness weak1 {
+		description "Low number of test cases, since we have 2 
+			images per equivalence class in average."
+		solution "Augment the testing dataset with sufficient 
+			variations and at least 5 images per equivalence class."
+		status toBeDiscussed
+	}
+	
+	
+	Weakness weak2 {
+		description "Recognition problems, if the digit at the ones 
+			place is a 0 or 9."
+		solution "Augment the training dataset with images that 
+			contain a 9 or a 0 at the ones place."
+		status toBeDiscussed
+	}
+	
+	Weakness weak3 {
+		description "Recognition precision (loss value not satisfied)."
+		solution "Augment the training dataset"
+		status toBeDiscussed
+	}
+	
+	Weakness weak4 {
+		description "Neural network’s recognition policy (When do we consider that the neural network has recognised some data?)"
+		solution "The equivalence class to which an image will be declared to belong to is these ones for which the recognition probability is higher than 0.9."
+		status toBeDiscussed
+	}
+	
+}

@@ -1,0 +1,168 @@
+Requirements {
+	functional Requirements {
+		Requirement FR1 {
+			NeuralNetworksInput {
+				neuronsSize 102300
+				neuronsFormat [310,330]
+				inputData {
+					InputData inputZeroZero{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitZero
+					}
+					InputData inputZeroOne{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitOne
+					}
+					InputData inputZeroTwo{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitTwo
+					}
+					InputData inputZeroThree{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitThree
+					}
+					InputData inputZerofour{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitFour
+					}
+					InputData inputZeroFive{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitFive
+					}
+					
+					InputData inputZeroSix{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitSix
+					}
+					
+					InputData inputZeroSeven{
+						neuronValues [0;255]
+						dataElements imgDigitZero,imgDigitSeven
+					}
+				}
+					
+			}
+		}
+		
+		Requirement FR2 {
+			NeuralNetworksOutput {
+				neuronsSize 20
+				neuronsFormat [1,20]
+				outputValueRange [0;1]
+				outputNeurons [
+					LeftDigit.LeftZero, LeftDigit.LeftOne, LeftDigit.LeftTwo, LeftDigit.LeftThree, LeftDigit.LeftFour, 
+					LeftDigit.LeftFive, LeftDigit.LeftSix, LeftDigit.LeftSeven,LeftDigit.LeftEight, LeftDigit.LeftNine,
+					RightDigit.RightZero, LeftDigit.LeftOne, RightDigit.RightTwo, RightDigit.RightThree, RightDigit.RightFour,
+					RightDigit.RightFive, RightDigit.RightSix, RightDigit.RightSeven, RightDigit.RightEight, RightDigit.RightNine
+				]
+				inputData FR1.inputZeroZero,FR1.inputZeroTwo, FR1.inputZeroThree, FR1.inputZerofour,FR1.inputZeroFive,FR1.inputZeroSix,FR1.inputZeroSeven
+			}
+		}
+		
+	}
+	nonfunctional Requirements {
+		Requirement NFR1 {
+			description 'Global accuracy on training dataset'
+			purpose 'Defining the tolerated accuracy on the training dataset'
+			priority high
+			TargetAccuracy tarGlobalTrainAcc for dataset dstrain{
+				minAccuracy 99
+				maxAccuracy 100
+				targetAccuracy 99.9
+			}
+		}
+		
+		Requirement NFR2 {
+			description 'Global accuracy on development dataset'
+			purpose 'Defining the tolerated accuracy on the development dataset'
+			priority high
+			TargetAccuracy tarGlobalDevAcc for dataset dsdev{
+				minAccuracy 97
+				maxAccuracy 100
+				targetAccuracy 99.5
+			}
+		}
+		
+		Requirement NFR3 {
+			description 'Global accuracy on testing dstest'
+			purpose 'Defining the tolerated accuracy on the testing dataset'
+			priority high
+			TargetAccuracy tarGlobalTestAcc for dataset dstest{
+				minAccuracy 95
+				maxAccuracy 100
+				targetAccuracy 99.7
+			}
+		}
+		
+		Requirement NFR4 {
+			description 'Global loss on training dataset'
+			purpose 'Defining the tolerated loss on the training dataset'
+			priority high
+			TargetLoss tarGlobalTrainLoss for dataset dstrain{
+				minLoss 0.001
+				maxLoss 0.02
+				targetLoss 0.004
+			}
+		}
+		
+		Requirement NFR5 {
+			description 'Global loss on development dataset'
+			purpose 'Defining the tolerated loss on the development dataset'
+			priority high
+			TargetLoss tarGlobalDevLoss for dataset dsdev{
+				minLoss 0.009
+				maxLoss 0.03
+				targetLoss 0.03
+			}
+		}
+		
+		Requirement NFR6 {
+			description 'Global loss on testing dstest'
+			purpose 'Defining the tolerated loss on the testing dataset'
+			priority high
+			TargetLoss tarGlobalTestLoss for dataset dstest{
+				minLoss 0.009
+				maxLoss 0.03
+				targetLoss 0.02
+			}
+		}
+		
+		Requirement NFR7 {
+			description 'Accuracy on testing dataset for the equivalence class LeftZero'
+			purpose 'Defining the tolerated accuracy for the equivalence class LeftZero from the testing dataset'
+			priority high
+			TargetAccuracy tarEcLeftZeroAcc for dataset dstest{
+				equivalenceClasses LeftDigit.LeftZero
+				minAccuracy 95
+				maxAccuracy 100
+				targetAccuracy 97
+			}
+		}
+		
+		Requirement NFR8 {
+			description 'Accuracy on testing dataset for the equivalence class LeftOne'
+			purpose 'Defining the tolerated accuracy for the equivalence class LeftOne from the testing dataset'
+			priority high
+			TargetAccuracy tarEcLeftOneAcc for dataset dstest{
+				equivalenceClasses LeftDigit.LeftOne
+				minAccuracy 95
+				maxAccuracy 100
+				targetAccuracy 97
+			}
+		}
+		
+		Requirement NFR8 {
+			description 'Accuracy on testing dataset for the equivalence class LeftOne'
+			purpose 'Defining the tolerated accuracy for the equivalence class LeftOne from the training dataset'
+			priority high
+			TargetAccuracy tarEcLeftOneAcc for dataset dstrain{
+				equivalenceClasses LeftDigit.LeftOne
+				minAccuracy 99
+				maxAccuracy 100
+				targetAccuracy 99.9
+			}
+		}
+		
+		
+	}
+}

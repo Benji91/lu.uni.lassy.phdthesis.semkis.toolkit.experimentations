@@ -1,0 +1,60 @@
+Target-neural-network CNN {
+	name 'Convolutional Neural Network'
+	description "Our targetNN has 9 layers: 4 convolutional layers, 2 maxpooling layers, 
+				2 fully connected layers with a random dropout of 30% and 1 output layers 
+				with randomly initialized weights. We use the activation function 'Relu' 
+				except in the output layer, where we use the activation function 'Sigmoid'.
+				The output layer has 20 neurons and outputs a probability distribution over
+				2 x 10 possible equivalence classes. The probability distribution describes 
+				the likelihood that a digit at the tens’ and ones’ position is recognized as 
+				an equivalence class. We selected the “binary cross-entropy” [21] function
+				as our loss function."
+	version 0.1
+	input "Counter Meter images"
+	output "Recognised Number on the image"
+	layers lyrInput, lyrConvolutional, lyrMaxpooling, lyrDropout, lyrDense, lyrOutput
+	
+}
+
+Layer lyrInput {
+	name "Input Layer"
+	description "The input layer takes a 310x330 sized images as input and forwards it directly to the convolutional layer. "
+	type input
+}
+
+Layer lyrConvolutional {
+	name "Convolutional Layer"
+	description "We use four convolutional layers followed by a maxpooling layer with an activation function relu. 
+				The input is a matrix of some shape, depending on the position of the convolutional layer in the network..
+				The input matrix is convolved with a kernel matrix (sizes 5x5 or 3x3) to produce a feature map (a matrix)"
+	type convolutional
+}
+
+
+Layer lyrMaxpooling {
+	name "Maxpooling Layer"
+	description "The pooling layers is reducing the size of an input matrix by filtering the highest value within some areas in the matrix."	
+	type pooling
+	activation relu
+}
+
+Layer lyrDropout {
+	name "Dropout Layer"
+	description "In this layer, we drop randomly 30% of the input data and forward it to the next layer."
+	type dropout
+}
+
+Layer lyrDense {
+	name "Dense Layer"
+	description "Hidden Layers with 128 neurons"
+	type hidden
+	activation relu
+}
+
+Layer lyrOutput{
+	name "Dense Layer"
+	description "Output Layer with 20 neurons."
+	type output
+	activation sigmoid
+	
+}

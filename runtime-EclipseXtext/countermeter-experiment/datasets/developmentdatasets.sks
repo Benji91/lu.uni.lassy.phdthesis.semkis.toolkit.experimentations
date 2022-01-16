@@ -1,0 +1,8 @@
+Dataset ds_dev_1 for process-iteration 1 {
+	name "development dataset"
+	description "The training dataset consists randomly selected images from the raw dataset."
+	version 0.2
+	size 40
+	data-format "[0,255]^310x330"
+	equivalenceclasses  TwoDigitNumber	
+}

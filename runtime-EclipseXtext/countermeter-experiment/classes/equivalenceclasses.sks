@@ -1,0 +1,164 @@
+EquivalenceClass SingleDigit{
+	description "These equivalence classes are representing the digital digit displayed on an image.
+				The equivalence class associated to an image can be an integer in the range of 0 to 9."
+	EquivalenceClass Zero {
+			value 0
+			description "A digital Zero displayed with 6 adjacent edges and completely visible on an 310x165 sized image."
+	}
+		
+	EquivalenceClass One {
+		value 1
+		description "A digital One displayed with 2 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+	}
+	
+	EquivalenceClass Two {
+		value 2
+		description "A digital Two displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+	}
+		
+	EquivalenceClass Three {
+		value 3
+		description "A digital Three displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+	}
+		
+	EquivalenceClass Four {
+		value 4
+		description "A digital Four displayed with 1 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+	}
+		
+	EquivalenceClass Five {
+		value 5
+		description "A digital Five displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+	}
+		
+	EquivalenceClass Six {
+		value 6
+		description "A digital Six displayed with 3 horizontal and 3 vertical adjacent edges on an 310x165 sized image."
+	}
+		
+	EquivalenceClass Seven {
+		value 7
+		description "A digital Seven displayed with 1 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+	}
+		
+	EquivalenceClass Eigth {
+		value 8
+		description "A digital Eigth displayed with 3 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+	}
+	
+	EquivalenceClass Nine {
+		value 9
+		description "A digital Nine displayed with 3 horizontal and 3 vertical adjacent edges on an 310x165 sized image."
+	}
+}
+
+EquivalenceClass TwoDigitNumber {
+	EquivalenceClass LeftDigit {
+		description "These equivalence classes are representing the digital digit displayed on an the left half of the image.
+				The equivalence class associated to an image can be an integer in the range of 0 to 9."		
+		EquivalenceClass ZeroLeft {
+			value 0
+			description "A digital Zero displayed with 6 adjacent edges and completely visible on an 310x165 sized image."
+		}
+		
+		EquivalenceClass OneLeft {
+			value 1
+			description "A digital One displayed with 2 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+		}
+		
+		EquivalenceClass TwoLeft {
+			value 2
+			description "A digital Two displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass ThreeLeft {
+			value 3
+			description "A digital Three displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass FourLeft {
+			value 4
+			description "A digital Four displayed with 1 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass FiveLeft {
+			value 5
+			description "A digital Five displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass SixLeft {
+			value 6
+			description "A digital Six displayed with 3 horizontal and 3 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass SevenLeft {
+			value 7
+			description "A digital Seven displayed with 1 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass EigthLeft {
+			value 8
+			description "A digital Eigth displayed with 3 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+		}
+		
+		EquivalenceClass NineLeft {
+			value 9
+			description "A digital Nine displayed with 3 horizontal and 3 vertical adjacent edges on an 310x165 sized image."
+		}
+	}
+	
+	EquivalenceClass RightDigit {
+		description "These equivalence classes are representing the digital digit displayed on an the right half of the image.
+				The equivalence class associated to an image can be an integer in the range of 0 to 9."			
+		EquivalenceClass ZeroRight {
+			value 0
+			description "A digital Zero displayed with 6 adjacent edges and completely visible on an 310x165 sized image."
+		}
+		
+		EquivalenceClass OneRight {
+			value 1
+			description "A digital One displayed with 2 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+		}
+		
+		
+		EquivalenceClass TwoRight {
+			value 2
+			description "A digital Two displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass ThreeRight {
+			value 3
+			description "A digital Three displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass FourRight {
+			value 4
+			description "A digital Four displayed with 1 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass FiveRight {
+			value 5
+			description "A digital Five displayed with 3 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass SixRight {
+			value 6
+			description "A digital Six displayed with 3 horizontal and 3 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass SevenRight {
+			value 7
+			description "A digital Seven displayed with 1 horizontal and 2 vertical adjacent edges on an 310x165 sized image."
+		}
+			
+		EquivalenceClass EigthRight {
+			value 8
+			description "A digital Eigth displayed with 3 horizontal and 4 vertical adjacent edges on an 310x165 sized image."
+		}
+		
+		EquivalenceClass NineRight {
+			value 9
+			description "A digital Nine displayed with 3 horizontal and 3 vertical adjacent edges on an 310x165 sized image."
+		}
+	}
+}
