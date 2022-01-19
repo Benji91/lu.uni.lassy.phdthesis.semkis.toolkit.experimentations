@@ -1,6 +1,7 @@
 ---
-# SEMKIS-DSL User manual
-## 1. Project repository informations
+# SEMKIS: Software engineering methodology for the knowledge management of intelligent Systems
+## SEMKIS-DSL: SEMKIS domain-specific language - User manual
+### 1. Project repository informations
 
 SEMKIS is a software engineering methodology for supporting software engineers to engineer deep learning datasets for developing improved neural networks (NN).
 We want to support NN software engineers with the software engineering principles in order to produce high-quality neural networks.
@@ -20,14 +21,14 @@ It contains several specifications of the neural network's requirements and key-
 The folder eclipse-workspace-semkis-dsl contains all Eclipse projects related to the SEMKIS-DSL grammar.
 The folder runtime-EclipseXtext contains some concrete specifications in the context of the MNIST (recognition of handwritten digits) and meter counter (recognition of the meter counter state) case studies.
 
-## 2. References
+### 2. References
 - Jahić, Benjamin, Nicolas Guelfi, and Benoît Ries. "Specifying Key-properties to Improve the Recognition Skills of Neural Networks." Proceedings of the 2020 European Symposium on Software Engineering. 2020.
 - Jahić, Benjamin, Nicolas Guelfi, and Benoît Ries. "Software engineering for dataset augmentation using generative adversarial networks." 2019 IEEE 10th International Conference on Software Engineering and Service Science (ICSESS). IEEE, 2019.	
 - Jahić, Benjamin, Nicolas Guelfi, and Benoît Ries. "SEMKIS-DSL: a Domain-Specific Language for Specifying Neural Network's Key-Properties." Lassy, Technical Report, 2021.
 
 
-## 3. Run experiment
-### 3.1 Prerequisites
+### 3. Run experiment
+#### 3.1 Prerequisites
 Environmental requirements to be fulfilled before proceeding to the _Execution_.
 - Java 1.8+
 - Git
@@ -39,7 +40,7 @@ Environmental requirements to be fulfilled before proceeding to the _Execution_.
 
 
 
-### 3.2 Execution
+#### 3.2 Execution
 1. Clone the GIT repository containing the project files
 2. Import the following projects inside these folders into your eclipse environment: <br>
 -- All projects inside: SEMKIS/lu.uni.lassy.phd.dsl.semkis.parent <br>
