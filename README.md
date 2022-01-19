@@ -1,6 +1,6 @@
 ---
 # SEMKIS: Software engineering methodology for the knowledge management of intelligent Systems
-## SEMKIS-DSL: SEMKIS domain-specific language - User manual
+## Experimentations and User manual for the SEMKIS domain-specific language (SEMKIS-DSL)
 ### 1. Project repository informations
 
 SEMKIS is a software engineering methodology for supporting software engineers to engineer deep learning datasets for developing improved neural networks (NN).
