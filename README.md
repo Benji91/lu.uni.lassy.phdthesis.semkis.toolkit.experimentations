@@ -8,14 +8,14 @@ We want to support NN software engineers with the software engineering principle
 Therefore, we introduce an iterative business process supporting the improvement of neural networks via dataset augmentation.
 The datasets are engineered based on the customer's requirements and the neural network's recognition skills (key-properties) acquired during the training.
 
-To support our SEMKIS methodology with a tool, we have developed the SEMKIS-toolseet, consisting of a textual editor and the SEMKIS domain-specific language (SEMKIS-DSL).
+To support our SEMKIS methodology with a tool, we have developed the SEMKIS-toolset, consisting of a textual editor and the SEMKIS domain-specific language (SEMKIS-DSL).
 The SEMKIS-DSL has been developed for support software engineers to support the specification of the requirements and key-properties of neural networks.
 The aim is to provide the required methods and tools for analysing the neural network's key-properties and customer's requirements in order to determine and specify a dataset augmentation.
 The dataset augmentation specification is used to reengineer the training and testing dataset for improving the neural network during another training.
 Each time the neural network has been training, the analysis is performed in order to verify the satisfaction of the reuqirements.
 If the requirements are not satisfied, then we reengineer the datasets and retrain the neural network.
 
-This GIT repository contains the experimentations presented in my PhD thesis presenting the SEMKIS methodology.
+This GIT repository contains the experimentations on the SEMKIS toolset from my PhD thesis presenting the SEMKIS methodology and the SEMKIS-DSL.
 It contains several specifications of the neural network's requirements and key-properties.
 
 The folder eclipse-workspace-semkis-dsl contains all Eclipse projects related to the SEMKIS-DSL grammar.
